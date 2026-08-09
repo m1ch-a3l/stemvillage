@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Code2, BrainCircuit, Bot, Sigma } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/layout/Container";
 import { siteConfig } from "@/lib/site";
+import { heroPhoto } from "@/lib/photos";
 
 const floatingBadges = [
   { label: "Coding", Icon: Code2, className: "top-6 left-2 sm:left-6" },
@@ -79,27 +81,16 @@ export function Hero() {
           {...fadeUp(0.2)}
           className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none"
         >
-          <div className="relative size-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-indigo to-brand-indigo-dark shadow-2xl">
-            <svg viewBox="0 0 400 400" className="size-full" aria-hidden>
-              <g opacity={0.35} stroke="white" strokeWidth={1.5} fill="none">
-                <circle cx={200} cy={200} r={70} />
-                <circle cx={200} cy={200} r={120} />
-                <circle cx={200} cy={200} r={170} />
-                <path d="M200,30 V80" />
-                <path d="M200,370 V320" />
-                <path d="M30,200 H80" />
-                <path d="M370,200 H320" />
-              </g>
-              <g fill="#F2B705">
-                <circle cx={200} cy={130} r={6} />
-                <circle cx={310} cy={230} r={5} />
-                <circle cx={110} cy={280} r={4.5} />
-              </g>
-              <g fill="#0E9F6E">
-                <circle cx={90} cy={140} r={5} />
-                <circle cx={280} cy={90} r={4} />
-              </g>
-            </svg>
+          <div className="relative size-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+            <Image
+              src={heroPhoto}
+              alt="Students collaborating on a technology project"
+              fill
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-indigo-dark/60 via-transparent to-transparent" />
           </div>
           {floatingBadges.map(({ label, Icon, className }) => (
             <div

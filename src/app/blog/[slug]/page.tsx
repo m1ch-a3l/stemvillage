@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/layout/Container";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { pageMetadata, articleJsonLd } from "@/lib/seo";
+import { getBlogPhoto } from "@/lib/photos";
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -69,8 +70,8 @@ export default async function BlogPostPage({
             <span aria-hidden>·</span>
             <span>{post.readTimeMinutes} min read</span>
           </div>
-          <div className="h-64 w-full overflow-hidden rounded-xl sm:h-80">
-            <PlaceholderArt seed={post.slug} />
+          <div className="relative h-64 w-full overflow-hidden rounded-xl sm:h-80">
+            <CardMedia photo={getBlogPhoto(post.category)} seed={post.slug} alt={post.title} priority />
           </div>
           <div className="flex flex-col gap-4 text-base leading-relaxed text-foreground/90">
             {post.content.map((paragraph, index) => (

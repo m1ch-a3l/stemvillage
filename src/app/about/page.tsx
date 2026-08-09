@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Target, Eye, Heart, Users } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
@@ -7,6 +8,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { ButtonLink } from "@/components/ui/button-link";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { aboutMissionPhoto } from "@/lib/photos";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
@@ -30,7 +32,22 @@ export default function AboutPage() {
         description={siteConfig.description}
       />
 
-      <section className="py-16 sm:py-20">
+      <section className="py-12 sm:py-16">
+        <Container>
+          <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-80">
+            <Image
+              src={aboutMissionPhoto}
+              alt="STEMAide team members collaborating"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-4 sm:py-6">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div className="flex flex-col gap-4">
             <SectionHeader eyebrow="Who We Are" title="A STEM education and innovation organisation." />

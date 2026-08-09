@@ -4,9 +4,11 @@ import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { ProgrammeCard } from "@/components/cards/ProgrammeCard";
+import { CardMedia } from "@/components/ui/card-media";
 import { stemAreaIconMap } from "@/lib/icons";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { getStemAreaPhoto } from "@/lib/photos";
 import { getStemAreaBySlug, getStemAreas, getProgrammes } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -46,6 +48,9 @@ export default async function StemAreaDetailPage({
       <section className="py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-3">
           <div className="flex flex-col gap-6 lg:col-span-2">
+            <div className="relative h-56 w-full overflow-hidden rounded-xl">
+              <CardMedia photo={getStemAreaPhoto(area.slug)} seed={area.slug} alt={area.name} priority />
+            </div>
             <span className="flex size-14 items-center justify-center rounded-xl bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
               <Icon className="size-7" aria-hidden />
             </span>

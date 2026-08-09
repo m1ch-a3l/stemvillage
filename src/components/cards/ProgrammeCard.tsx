@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
+import { getProgrammePhoto } from "@/lib/photos";
 import type { Programme } from "@/types/content";
 
 export function ProgrammeCard({ programme }: { programme: Programme }) {
@@ -10,10 +11,11 @@ export function ProgrammeCard({ programme }: { programme: Programme }) {
       href={`/programmes/${programme.slug}`}
       className="group flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-shadow hover:shadow-lg"
     >
-      <div className="h-36 w-full overflow-hidden">
-        <PlaceholderArt
+      <div className="relative h-36 w-full overflow-hidden">
+        <CardMedia
+          photo={getProgrammePhoto(programme.stemAreas)}
           seed={programme.slug}
-          className="transition-transform duration-500 group-hover:scale-105"
+          alt={programme.title}
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">

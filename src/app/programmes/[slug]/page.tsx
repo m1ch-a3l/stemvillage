@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import { CheckCircle2, Clock, Users, MonitorSmartphone } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { StemAreaCard } from "@/components/cards/StemAreaCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { getProgrammePhoto } from "@/lib/photos";
 import { getProgrammeBySlug, getProgrammes, getStemAreas } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -45,8 +46,13 @@ export default async function ProgrammeDetailPage({
       <section className="py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-3">
           <div className="flex flex-col gap-6 lg:col-span-2">
-            <div className="h-56 w-full overflow-hidden rounded-xl">
-              <PlaceholderArt seed={programme.slug} />
+            <div className="relative h-56 w-full overflow-hidden rounded-xl">
+              <CardMedia
+                photo={getProgrammePhoto(programme.stemAreas)}
+                seed={programme.slug}
+                alt={programme.title}
+                priority
+              />
             </div>
             <p className="text-base text-muted-foreground">{programme.description}</p>
             {areas.length ? (

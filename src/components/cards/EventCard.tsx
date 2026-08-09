@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
+import { getEventPhoto } from "@/lib/photos";
 import type { EventItem } from "@/types/content";
 
 function formatDate(date: string, endDate?: string) {
@@ -26,8 +27,8 @@ export function EventCard({ event }: { event: EventItem }) {
       href={`/events/${event.slug}`}
       className="group flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-shadow hover:shadow-lg"
     >
-      <div className="h-40 w-full overflow-hidden">
-        <PlaceholderArt seed={event.slug} className="transition-transform duration-500 group-hover:scale-105" />
+      <div className="relative h-40 w-full overflow-hidden">
+        <CardMedia photo={getEventPhoto(event.category)} seed={event.slug} alt={event.title} />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex items-center justify-between gap-2">

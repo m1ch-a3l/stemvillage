@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
+import { getBlogPhoto } from "@/lib/photos";
 import type { BlogPost } from "@/types/content";
 
 export function BlogCard({ post }: { post: BlogPost }) {
@@ -15,8 +16,8 @@ export function BlogCard({ post }: { post: BlogPost }) {
       href={`/blog/${post.slug}`}
       className="group flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-shadow hover:shadow-lg"
     >
-      <div className="h-40 w-full overflow-hidden">
-        <PlaceholderArt seed={post.slug} className="transition-transform duration-500 group-hover:scale-105" />
+      <div className="relative h-40 w-full overflow-hidden">
+        <CardMedia photo={getBlogPhoto(post.category)} seed={post.slug} alt={post.title} />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <Badge variant="outline" className="w-fit">
