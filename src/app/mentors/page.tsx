@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { TeamMemberCard } from "@/components/cards/TeamMemberCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
-import { getMentorPhoto } from "@/lib/photos";
+import { getMentorPhoto, mentorshipPhoto } from "@/lib/photos";
 import { getMentors } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -22,6 +22,7 @@ export default function MentorsPage() {
         eyebrow="Mentors"
         title="Working professionals guiding the next generation."
         description="Our mentors volunteer their time to give learners honest, practical career guidance."
+        image={mentorshipPhoto}
       />
       <section className="py-16 sm:py-20">
         <Container>

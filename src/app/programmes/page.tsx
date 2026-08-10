@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { ProgrammeCard } from "@/components/cards/ProgrammeCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { heroPhotos } from "@/lib/photos";
 import { getProgrammes } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,6 +22,7 @@ export default function ProgrammesPage() {
         eyebrow="Programmes"
         title="A programme for every stage of the STEM journey."
         description="Structured, hands-on learning paths for kids, teens, adults, schools and communities."
+        image={heroPhotos[3]}
       />
       <section className="py-16 sm:py-20">
         <Container>

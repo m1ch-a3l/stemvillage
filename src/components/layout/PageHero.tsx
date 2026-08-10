@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";
 
@@ -6,15 +7,27 @@ interface PageHeroProps {
   title: string;
   description?: string;
   className?: string;
+  image?: string;
 }
 
-export function PageHero({ eyebrow, title, description, className }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, className, image }: PageHeroProps) {
   return (
-    <section className={cn("relative overflow-hidden bg-brand-indigo-dark py-16 sm:py-20", className)}>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:36px_36px]"
-      />
+    <section
+      className={cn(
+        "relative overflow-hidden bg-brand-indigo-dark py-16 sm:py-20",
+        image && "py-20 sm:py-28",
+        className
+      )}
+    >
+      {image ? (
+        <>
+          <Image src={image} alt="" fill sizes="100vw" className="object-cover" priority />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-t from-brand-indigo-dark via-brand-indigo-dark/80 to-brand-indigo-dark/50"
+          />
+        </>
+      ) : null}
       <Container className="relative flex flex-col gap-3">
         {eyebrow ? (
           <span className="inline-flex w-fit items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-brand-gold uppercase">

@@ -3,7 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { TeamMemberCard } from "@/components/cards/TeamMemberCard";
 import { pageMetadata } from "@/lib/seo";
-import { getTeamPhoto } from "@/lib/photos";
+import { getTeamPhoto, heroPhotos } from "@/lib/photos";
 import { getTeam } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,6 +21,7 @@ export default function TeamPage() {
         eyebrow="Our Team"
         title="The people behind the programmes."
         description="A team combining backgrounds in education, engineering and community outreach."
+        image={heroPhotos[1]}
       />
       <section className="py-16 sm:py-20">
         <Container>

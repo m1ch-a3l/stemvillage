@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { heroPhotos } from "@/lib/photos";
 import { getFaqs } from "@/lib/content";
 import type { Faq } from "@/types/content";
 
@@ -28,6 +29,7 @@ export default function FaqsPage() {
         eyebrow="FAQs"
         title="Frequently asked questions."
         description="Answers to common questions about our programmes, schools, partnerships and volunteering."
+        image={heroPhotos[0]}
       />
       <section className="py-16 sm:py-20">
         <Container className="mx-auto flex max-w-3xl flex-col gap-12">

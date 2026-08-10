@@ -33,13 +33,6 @@ export function CTASection({
         className
       )}
     >
-      <div
-        aria-hidden
-        className={cn(
-          "pointer-events-none absolute inset-0 opacity-[0.08]",
-          "bg-[linear-gradient(to_right,currentColor_1px,transparent_1px),linear-gradient(to_bottom,currentColor_1px,transparent_1px)] bg-[size:32px_32px]"
-        )}
-      />
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <h2 className="max-w-2xl text-3xl font-bold text-balance sm:text-4xl">
           {title}

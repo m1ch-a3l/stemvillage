@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { stemAreaPhotos } from "@/lib/photos";
 
 const points = [
   {
@@ -22,8 +24,19 @@ const points = [
 
 export function WhySTEMatters() {
   return (
-    <section className="bg-brand-indigo py-20 text-white sm:py-24">
-      <Container className="flex flex-col gap-10">
+    <section className="relative overflow-hidden bg-brand-indigo py-20 text-white sm:py-24">
+      <Image
+        src={stemAreaPhotos["artificial-intelligence"]}
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-20"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-r from-brand-indigo via-brand-indigo/95 to-brand-indigo/70"
+      />
+      <Container className="relative flex flex-col gap-10">
         <SectionHeader
           eyebrow="Why STEM Matters"
           title="STEM education isn't just about a subject — it's about readiness."

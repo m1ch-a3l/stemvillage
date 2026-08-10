@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
-import { getImpactPhoto } from "@/lib/photos";
+import { getImpactPhoto, aboutMissionPhoto } from "@/lib/photos";
 import { getImpactStats, getImpactStories } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -27,6 +27,7 @@ export default function ImpactPage() {
         eyebrow="Impact"
         title="Measuring what matters."
         description="A look at the reach of our programmes so far — and our commitment to reporting on it honestly as we grow."
+        image={aboutMissionPhoto}
       />
       <section className="border-b border-border bg-secondary/40 py-14">
         <Container>

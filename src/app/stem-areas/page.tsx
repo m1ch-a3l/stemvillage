@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { StemAreaCard } from "@/components/cards/StemAreaCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { heroPhotos } from "@/lib/photos";
 import { getStemAreas } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,6 +22,7 @@ export default function StemAreasPage() {
         eyebrow="STEM Areas"
         title="Seven areas. One hands-on approach."
         description="Every subject we teach follows the same principle: learn by building, not by memorising."
+        image={heroPhotos[2]}
       />
       <section className="py-16 sm:py-20">
         <Container>

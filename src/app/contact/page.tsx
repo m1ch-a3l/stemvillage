@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { workshopPhotos } from "@/lib/photos";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
@@ -19,6 +20,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's talk."
         description="Whether it's a general question, a programme enquiry, or a partnership discussion — reach out and our team will follow up."
+        image={workshopPhotos["corporate-innovation-sprint"]}
       />
       <section className="py-16 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-3">

@@ -3,6 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { EventCard } from "@/components/cards/EventCard";
 import { pageMetadata } from "@/lib/seo";
+import { eventCategoryPhotos } from "@/lib/photos";
 import { getUpcomingEvents, getPastEvents } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -21,6 +22,7 @@ export default function EventsPage() {
         eyebrow="Events"
         title="Workshops, competitions and community events."
         description="Open to students, schools, parents and the wider community."
+        image={eventCategoryPhotos.Hackathon}
       />
       <section className="py-16 sm:py-20">
         <Container className="flex flex-col gap-16">

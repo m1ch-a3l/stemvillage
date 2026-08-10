@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { eventCategoryPhotos } from "@/lib/photos";
 import { getPartners } from "@/lib/content";
 import type { Partner } from "@/types/content";
 
@@ -23,6 +24,7 @@ export default function PartnersPage() {
         eyebrow="Partners"
         title="Organisations investing in STEM education."
         description="We work alongside schools, companies, NGOs, universities and government partners to expand access to STEM education."
+        image={eventCategoryPhotos["STEM Fair"]}
       />
       <section className="py-16 sm:py-20">
         <Container className="flex flex-col gap-12">

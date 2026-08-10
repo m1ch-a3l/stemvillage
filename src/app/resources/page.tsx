@@ -4,6 +4,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/badge";
 import { pageMetadata } from "@/lib/seo";
+import { stemAreaPhotos } from "@/lib/photos";
 import { getResources } from "@/lib/content";
 import type { Resource } from "@/types/content";
 
@@ -31,6 +32,7 @@ export default function ResourcesPage() {
         eyebrow="Resources"
         title="Free STEM learning resources."
         description="Guides, tutorials, tools and project ideas — a growing library for learners, parents and teachers to use anytime."
+        image={stemAreaPhotos["mathematics-science"]}
       />
       <section className="py-16 sm:py-20">
         <Container>

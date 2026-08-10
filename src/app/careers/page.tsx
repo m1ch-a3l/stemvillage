@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button-link";
 import { pageMetadata } from "@/lib/seo";
+import { stemAreaPhotos } from "@/lib/photos";
 import { getCareerOpenings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -22,6 +23,7 @@ export default function CareersPage() {
         eyebrow="Careers"
         title="Help build the future of STEM education."
         description="We're always interested in hearing from educators, engineers and organisers who care about making STEM accessible."
+        image={stemAreaPhotos["engineering-innovation"]}
       />
       <section className="py-16 sm:py-20">
         <Container className="flex flex-col gap-5">

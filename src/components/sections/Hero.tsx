@@ -1,22 +1,34 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Code2, BrainCircuit, Bot, Sigma } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/layout/Container";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
-import { heroPhotos } from "@/lib/photos";
+import { heroPhotos, stemAreaPhotos } from "@/lib/photos";
+import { getImpactStats } from "@/lib/content";
 
-const floatingBadges = [
-  { label: "Coding", Icon: Code2, className: "top-6 left-2 sm:left-6" },
-  { label: "Robotics", Icon: Bot, className: "top-1/3 right-0 sm:right-4" },
-  { label: "AI", Icon: BrainCircuit, className: "bottom-16 left-4 sm:left-10" },
-  { label: "Mathematics", Icon: Sigma, className: "bottom-2 right-6 sm:right-12" },
-];
+function ArrowBadge({ dark = false }: { dark?: boolean }) {
+  return (
+    <span
+      className={cn(
+        "flex size-8 shrink-0 items-center justify-center rounded-full transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
+        dark ? "bg-brand-indigo-dark text-white" : "bg-brand-gold text-brand-indigo-dark"
+      )}
+    >
+      <ArrowUpRight className="size-4" aria-hidden />
+    </span>
+  );
+}
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const headlineStat = getImpactStats()[0];
+
   const fadeUp = (delay: number) =>
     shouldReduceMotion
       ? {}
@@ -28,9 +40,17 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-brand-indigo-dark">
+      <Image
+        src={heroPhotos[3]}
+        alt=""
+        fill
+        sizes="100vw"
+        priority
+        className="object-cover"
+      />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-[size:36px_36px]"
+        className="absolute inset-0 bg-gradient-to-b from-brand-indigo-dark/95 via-brand-indigo-dark/90 to-brand-indigo-dark"
       />
       <div
         aria-hidden
@@ -40,59 +60,129 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute -bottom-24 -left-24 size-80 rounded-full bg-brand-emerald/20 blur-3xl"
       />
-      <Container className="relative grid gap-12 py-20 sm:py-28 lg:grid-cols-2 lg:items-center lg:py-32">
-        <div className="flex flex-col gap-6">
-          <motion.span
-            {...fadeUp(0)}
-            className="inline-flex w-fit items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-brand-gold uppercase"
-          >
-            {siteConfig.name} — STEM Education & Innovation
-          </motion.span>
-          <motion.h1
-            {...fadeUp(0.08)}
-            className="text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
-          >
-            {siteConfig.tagline}
-          </motion.h1>
-          <motion.p {...fadeUp(0.16)} className="max-w-xl text-base text-white/75 sm:text-lg">
-            {siteConfig.description}
-          </motion.p>
-          <motion.div {...fadeUp(0.24)} className="flex flex-wrap items-center gap-3 pt-2">
-            <ButtonLink
-              href="/programmes"
-              size="lg"
-              className="h-12 bg-brand-gold px-6 text-sm font-semibold text-brand-indigo-dark hover:bg-brand-gold/90"
-            >
-              Explore Our Programmes
-              <ArrowRight className="size-4" />
-            </ButtonLink>
-            <ButtonLink
-              href="/schools-partnerships"
-              size="lg"
-              variant="outline"
-              className="h-12 border-white/30 bg-transparent px-6 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              Partner With Us
-            </ButtonLink>
-          </motion.div>
-        </div>
 
-        <motion.div
-          {...fadeUp(0.2)}
-          className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none"
+      <Container className="relative flex flex-col items-center gap-8 pt-20 text-center sm:pt-28">
+        <motion.span
+          {...fadeUp(0)}
+          className="inline-flex w-fit items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-brand-gold uppercase"
         >
-          <HeroCarousel images={heroPhotos} alt="Students exploring coding, robotics and technology" />
-          {floatingBadges.map(({ label, Icon, className }) => (
-            <div
-              key={label}
-              className={`absolute flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-medium text-brand-indigo-dark shadow-lg ${className}`}
-            >
-              <Icon className="size-3.5" aria-hidden />
-              {label}
-            </div>
-          ))}
+          {siteConfig.name} — STEM Education & Innovation
+        </motion.span>
+        <motion.h1
+          {...fadeUp(0.08)}
+          className="max-w-3xl text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
+        >
+          {siteConfig.tagline}
+        </motion.h1>
+        <motion.p {...fadeUp(0.16)} className="max-w-xl text-base text-white/75 sm:text-lg">
+          {siteConfig.description}
+        </motion.p>
+        <motion.div {...fadeUp(0.24)} className="flex flex-wrap items-center justify-center gap-3">
+          <ButtonLink
+            href="/programmes"
+            size="lg"
+            className="h-12 bg-brand-gold px-6 text-sm font-semibold text-brand-indigo-dark hover:bg-brand-gold/90"
+          >
+            Explore Our Programmes
+            <ArrowRight className="size-4" />
+          </ButtonLink>
+          <ButtonLink
+            href="/schools-partnerships"
+            size="lg"
+            variant="outline"
+            className="h-12 border-white/30 bg-transparent px-6 text-sm font-semibold text-white hover:bg-white/10"
+          >
+            Partner With Us
+          </ButtonLink>
         </motion.div>
       </Container>
+
+      {/* Bottom-aligned staggered card row — tall / medium / short / medium / tall, full container width */}
+      <motion.div
+        {...fadeUp(0.32)}
+        className="relative mt-10 sm:mt-14"
+      >
+        <Container className="flex items-end gap-3 overflow-x-auto pb-10 sm:gap-4 sm:overflow-visible sm:pb-16">
+        {/* 1. Stat card — tallest */}
+        <Link
+          href="/impact"
+          className="group flex h-56 min-w-[132px] flex-1 flex-col justify-between rounded-3xl bg-brand-indigo p-4 shadow-2xl sm:h-72 sm:min-w-0 sm:p-5"
+        >
+          <ArrowBadge />
+          <div>
+            <span className="block font-heading text-2xl font-bold text-white sm:text-3xl">
+              {headlineStat.value}
+            </span>
+            <span className="text-xs font-medium text-white/70">{headlineStat.label}</span>
+          </div>
+        </Link>
+
+        {/* 2. Rotating photo card — medium */}
+        <Link
+          href="/stem-areas"
+          className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl shadow-xl sm:h-56 sm:min-w-0"
+        >
+          <HeroCarousel
+            images={heroPhotos.slice(0, 2)}
+            alt="Students exploring STEM"
+            controls={false}
+            className="rounded-3xl border-0 shadow-none"
+            sizes="200px"
+          />
+          <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-indigo-dark">
+            STEM Areas
+          </span>
+        </Link>
+
+        {/* 3. Middle CTA card — shortest */}
+        <Link
+          href="/mentors"
+          className="group flex h-32 min-w-[110px] flex-1 flex-col justify-between rounded-3xl bg-white p-4 shadow-xl sm:h-44 sm:min-w-0"
+        >
+          <span className="font-heading text-sm leading-snug font-bold text-foreground sm:text-base">
+            Join 40+ mentors
+          </span>
+          <ArrowBadge dark />
+        </Link>
+
+        {/* 4. Photo card — medium */}
+        <Link
+          href="/stem-areas/artificial-intelligence"
+          className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl shadow-xl sm:h-56 sm:min-w-0"
+        >
+          <Image
+            src={stemAreaPhotos["artificial-intelligence"]}
+            alt="Artificial Intelligence"
+            fill
+            sizes="200px"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-indigo-dark">
+            AI
+          </span>
+        </Link>
+
+        {/* 5. Photo + CTA card — tallest */}
+        <Link
+          href="/schools-partnerships"
+          className="group relative flex h-56 min-w-[132px] flex-1 flex-col justify-between overflow-hidden rounded-3xl bg-brand-gold p-4 shadow-2xl sm:h-72 sm:min-w-0 sm:p-5"
+        >
+          <Image
+            src={stemAreaPhotos["robotics-electronics"]}
+            alt="Robotics"
+            fill
+            sizes="220px"
+            className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-indigo-dark/85 via-brand-indigo-dark/20 to-transparent" />
+          <span className="relative ml-auto flex size-8 items-center justify-center rounded-full bg-white text-brand-indigo-dark transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <ArrowUpRight className="size-4" aria-hidden />
+          </span>
+          <span className="relative text-sm font-semibold text-white">Partner With Us</span>
+        </Link>
+        </Container>
+      </motion.div>
     </section>
   );
 }

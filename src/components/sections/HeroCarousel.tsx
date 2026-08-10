@@ -10,9 +10,19 @@ interface HeroCarouselProps {
   images: string[];
   alt: string;
   intervalMs?: number;
+  controls?: boolean;
+  className?: string;
+  sizes?: string;
 }
 
-export function HeroCarousel({ images, alt, intervalMs = 5000 }: HeroCarouselProps) {
+export function HeroCarousel({
+  images,
+  alt,
+  intervalMs = 5000,
+  controls = true,
+  className,
+  sizes = "(min-width: 1024px) 40vw, 90vw",
+}: HeroCarouselProps) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const shouldReduceMotion = useReducedMotion();
@@ -28,7 +38,7 @@ export function HeroCarousel({ images, alt, intervalMs = 5000 }: HeroCarouselPro
 
   return (
     <div
-      className="relative size-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl"
+      className={cn("relative size-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl", className)}
       role="region"
       aria-roledescription="carousel"
       aria-label={alt}
@@ -50,7 +60,7 @@ export function HeroCarousel({ images, alt, intervalMs = 5000 }: HeroCarouselPro
             src={images[index]}
             alt={`${alt} — slide ${index + 1} of ${images.length}`}
             fill
-            sizes="(min-width: 1024px) 40vw, 90vw"
+            sizes={sizes}
             className="object-cover"
             priority={index === 0}
           />
@@ -62,7 +72,7 @@ export function HeroCarousel({ images, alt, intervalMs = 5000 }: HeroCarouselPro
         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-indigo-dark/60 via-transparent to-transparent"
       />
 
-      {images.length > 1 ? (
+      {controls && images.length > 1 ? (
         <>
           <button
             type="button"

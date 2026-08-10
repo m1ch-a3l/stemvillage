@@ -3,6 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { pageMetadata } from "@/lib/seo";
+import { stemAreaPhotos } from "@/lib/photos";
 import { getBlogPosts } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -20,6 +21,7 @@ export default function BlogPage() {
         eyebrow="STEM Insights"
         title="Ideas, guides and updates from our team."
         description="Practical perspectives on STEM education, technology, and building the skills that matter."
+        image={stemAreaPhotos["data-science"]}
       />
       <section className="py-16 sm:py-20">
         <Container>

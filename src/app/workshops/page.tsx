@@ -6,7 +6,7 @@ import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
-import { getWorkshopPhoto } from "@/lib/photos";
+import { getWorkshopPhoto, eventCategoryPhotos } from "@/lib/photos";
 import { getWorkshops } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -24,6 +24,7 @@ export default function WorkshopsPage() {
         eyebrow="Workshops"
         title="Short-format, hands-on STEM sessions."
         description="Single-day and half-day workshops for students, schools and organisations — no long-term commitment required."
+        image={eventCategoryPhotos.Bootcamp}
       />
       <section className="py-16 sm:py-20">
         <Container>

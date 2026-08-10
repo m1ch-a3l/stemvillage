@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { PartnershipForm } from "@/components/forms/PartnershipForm";
 import { pageMetadata } from "@/lib/seo";
+import { eventCategoryPhotos } from "@/lib/photos";
 
 export const metadata: Metadata = pageMetadata({
   title: "Schools & Partnerships",
@@ -33,6 +34,7 @@ export default function SchoolsPartnershipsPage() {
         eyebrow="Schools & Partnerships"
         title="Bring STEM to your school or organisation."
         description="Whether you're a school looking to build STEM capacity, or an organisation looking to invest in the next generation, we build partnerships around your specific goals."
+        image={eventCategoryPhotos["School Visit"]}
       />
       <section className="py-16 sm:py-20">
         <Container className="grid gap-6 sm:grid-cols-2">
