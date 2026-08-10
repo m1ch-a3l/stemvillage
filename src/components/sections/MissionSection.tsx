@@ -42,7 +42,7 @@ export function MissionSection() {
             <SectionHeader
               eyebrow="Who We Are"
               title="Equipping learners with the skills to build the future."
-              description="GoStem is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
+              description="StemVillage is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
             />
             <div>
               <ButtonLink href="/about" variant="outline" className="h-10 px-5 text-sm">
@@ -54,7 +54,7 @@ export function MissionSection() {
         <div className="grid gap-6 sm:grid-cols-3">
           {pillars.map(({ icon: Icon, title, body }, index) => (
             <Reveal key={title} delay={index * 0.1}>
-              <div className="flex h-full flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10 transition-transform hover:-translate-y-1">
+              <div className="flex h-full flex-col gap-3 rounded-xl bg-card p-6 shadow-md ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg">
                 <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
                   <Icon className="size-5" aria-hidden />
                 </span>

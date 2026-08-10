@@ -13,7 +13,7 @@ export function ProgrammeCard({ programme }: { programme: Programme }) {
     >
       <div className="relative h-36 w-full overflow-hidden">
         <CardMedia
-          photo={getProgrammePhoto(programme.stemAreas)}
+          photo={getProgrammePhoto(programme.slug)}
           seed={programme.slug}
           alt={programme.title}
         />

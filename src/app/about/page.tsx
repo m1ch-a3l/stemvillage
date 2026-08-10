@@ -10,16 +10,6 @@ import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { aboutMissionPhoto } from "@/lib/photos";
 
-// Placeholder organisational history — replace with verified milestones.
-const milestones = [
-  { year: "2021", title: "Founded", body: "GoStem started with a single after-school coding club in Accra." },
-  { year: "2022", title: "Robotics Academy launches", body: "First cohort of STEM for Kids and Robotics Academy learners graduate." },
-  { year: "2023", title: "First school partnerships", body: "GoStem signs its first partner schools and launches the STEM Clubs programme." },
-  { year: "2024", title: "AI programme & mentor network", body: "AI & Machine Learning programme launches; volunteer mentor network passes 20 mentors." },
-  { year: "2025", title: "Community outreach expands", body: "Outreach reaches underserved regions; first Coding Bootcamp cohort graduates." },
-  { year: "2026", title: "Continuing to grow", body: "Expanding programme reach and school partnerships nationwide." },
-];
-
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
   description: `Learn about ${siteConfig.name}'s mission, vision and values, and the story behind our STEM education programmes.`,
@@ -37,7 +27,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow={`About Us · Est. ${siteConfig.foundedYear}`}
         title="Building the organisation behind Ghana's next STEM generation."
         description={siteConfig.description}
       />
@@ -102,7 +91,7 @@ export default function AboutPage() {
         <Container className="flex flex-col gap-10">
           <SectionHeader eyebrow="Mission, Vision & Values" title="What drives our work." align="center" className="mx-auto" />
           <div className="grid gap-6 sm:grid-cols-3">
-            <div className="flex flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+            <div className="flex flex-col gap-3 rounded-xl bg-card p-6 shadow-md ring-1 ring-foreground/10 transition-shadow hover:shadow-lg">
               <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
                 <Target className="size-5" aria-hidden />
               </span>
@@ -111,7 +100,7 @@ export default function AboutPage() {
                 To make quality STEM education accessible, practical and inspiring for the next generation.
               </p>
             </div>
-            <div className="flex flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+            <div className="flex flex-col gap-3 rounded-xl bg-card p-6 shadow-md ring-1 ring-foreground/10 transition-shadow hover:shadow-lg">
               <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
                 <Eye className="size-5" aria-hidden />
               </span>
@@ -121,7 +110,7 @@ export default function AboutPage() {
                 consume it.
               </p>
             </div>
-            <div className="flex flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10">
+            <div className="flex flex-col gap-3 rounded-xl bg-card p-6 shadow-md ring-1 ring-foreground/10 transition-shadow hover:shadow-lg">
               <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
                 <Heart className="size-5" aria-hidden />
               </span>
@@ -136,31 +125,6 @@ export default function AboutPage() {
               <div key={value.title} className="rounded-lg border border-border p-4">
                 <h4 className="text-sm font-semibold text-foreground">{value.title}</h4>
                 <p className="mt-1 text-xs text-muted-foreground">{value.body}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <Container className="flex flex-col gap-10">
-          <SectionHeader
-            eyebrow="Our Journey"
-            title="How we got here."
-            description="Placeholder milestones — to be replaced with verified organisational history."
-            align="center"
-            className="mx-auto"
-          />
-          <div className="relative mx-auto flex max-w-3xl flex-col gap-8 before:absolute before:top-1 before:bottom-1 before:left-[27px] before:w-px before:bg-border sm:before:left-[31px]">
-            {milestones.map((milestone) => (
-              <div key={milestone.year} className="relative flex gap-5">
-                <span className="relative z-10 flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-indigo font-heading text-sm font-bold text-white dark:bg-primary dark:text-primary-foreground">
-                  {milestone.year}
-                </span>
-                <div className="flex flex-col gap-1 pt-2.5">
-                  <h3 className="font-heading text-base font-semibold text-foreground">{milestone.title}</h3>
-                  <p className="text-sm text-muted-foreground">{milestone.body}</p>
-                </div>
               </div>
             ))}
           </div>
@@ -183,10 +147,10 @@ export default function AboutPage() {
       </section>
 
       <CTASection
-        title="Careers to Explore, or a Team to Join"
-        description="Interested in working with us, mentoring learners, or exploring open roles?"
-        primaryLabel="View Careers"
-        primaryHref="/careers"
+        title="Want to Get Involved?"
+        description="Interested in partnering with us, mentoring learners, or bringing a programme to your school?"
+        primaryLabel="Explore Programmes"
+        primaryHref="/programmes"
         secondaryLabel="Contact Us"
         secondaryHref="/contact"
         variant="gold"

@@ -42,35 +42,6 @@ export interface Workshop {
   deliveryModes: string[];
 }
 
-export interface EventItem {
-  slug: string;
-  title: string;
-  category: string;
-  description: string;
-  longDescription: string;
-  date: string;
-  endDate?: string;
-  time: string;
-  location: string;
-  isVirtual: boolean;
-  capacity: number;
-  status: "upcoming" | "past" | "registration-open" | "sold-out";
-  image: string;
-}
-
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string[];
-  category: string;
-  author: string;
-  authorRole: string;
-  date: string;
-  readTimeMinutes: number;
-  image: string;
-}
-
 export interface TeamMember {
   slug: string;
   name: string;
@@ -98,55 +69,3 @@ export interface Testimonial {
   category: "student" | "parent" | "teacher" | "school" | "partner";
 }
 
-export interface Partner {
-  name: string;
-  category: "School" | "Company" | "NGO" | "University" | "Government" | "STEM Organisation";
-  logo: string;
-  url?: string;
-}
-
-export interface Resource {
-  slug: string;
-  title: string;
-  type: "Guide" | "Tutorial" | "Article" | "PDF" | "Tool" | "Project Idea";
-  description: string;
-  stemArea: string;
-}
-
-export interface Faq {
-  question: string;
-  answer: string;
-  category: "General" | "Programmes" | "Schools" | "Partnerships" | "Volunteering";
-}
-
-// Placeholder impact statistics — flagged for the organisation to replace with
-// verified real figures once available.
-export interface ImpactStat {
-  label: string;
-  value: string;
-  description?: string;
-}
-
-export interface ImpactStory {
-  title: string;
-  category: "Learners" | "Schools" | "Communities" | "Projects" | "Workshops" | "Partners";
-  summary: string;
-  image: string;
-}
-
-export interface Project {
-  slug: string;
-  name: string;
-  category: string;
-  description: string;
-  date: string;
-  image: string;
-}
-
-export interface CareerOpening {
-  slug: string;
-  title: string;
-  type: "Full-time" | "Part-time" | "Volunteer" | "Internship";
-  location: string;
-  summary: string;
-}

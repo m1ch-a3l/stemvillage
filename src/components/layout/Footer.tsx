@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
+import Image from "next/image";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "@/components/layout/SocialIcons";
 import { siteConfig, footerLinks } from "@/lib/site";
 
@@ -42,13 +43,17 @@ export function Footer() {
   return (
     <footer className="bg-brand-indigo-dark text-white">
       <Container className="py-14">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
-              <span className="flex size-8 items-center justify-center rounded-lg bg-brand-gold text-brand-indigo-dark">
-                <span className="text-sm font-bold">G</span>
-              </span>
-              {siteConfig.name}
+ <Image
+            src="/images/logo_white.png"
+            alt="Thanksgiving Place Chapel and Ministries"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
             </Link>
             <p className="max-w-sm text-sm text-white/65">{siteConfig.description}</p>
             <ul className="flex flex-col gap-2 text-sm text-white/65">
@@ -87,7 +92,6 @@ export function Footer() {
 
           <FooterColumn title="Organisation" links={footerLinks.organisation} />
           <FooterColumn title="Programmes" links={footerLinks.programmes} />
-          <FooterColumn title="Resources" links={footerLinks.resources} />
           <div className="col-span-2 flex flex-col gap-3 sm:col-span-1">
             <h3 className="text-sm font-semibold text-white">Connect</h3>
             <ul className="flex flex-col gap-2">
@@ -113,9 +117,6 @@ export function Footer() {
             </Link>
             <Link href="/terms-conditions" className="hover:text-white/80">
               Terms &amp; Conditions
-            </Link>
-            <Link href="/faqs" className="hover:text-white/80">
-              FAQs
             </Link>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
+import Image from "next/image";
 import {
   Sheet,
   SheetClose,
@@ -49,10 +50,14 @@ export function Navbar() {
           href="/"
           className="group flex items-center gap-2 font-heading text-lg font-bold text-brand-indigo dark:text-primary"
         >
-          <span className="flex size-8 items-center justify-center rounded-lg bg-brand-indigo text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-            <span className="text-sm font-bold">G</span>
-          </span>
-          {siteConfig.name}
+          <Image
+            src="/images/logo.png"
+            alt="Thanksgiving Place Chapel and Ministries"
+            width={160}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         <nav

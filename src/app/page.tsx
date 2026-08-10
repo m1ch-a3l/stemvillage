@@ -7,11 +7,8 @@ import { StemAreasGrid } from "@/components/sections/StemAreasGrid";
 import { ProgrammesGrid } from "@/components/sections/ProgrammesGrid";
 import { ImageTextSection } from "@/components/sections/ImageTextSection";
 import { WhySTEMatters } from "@/components/sections/WhySTEMatters";
-import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
-import { EventsPreview } from "@/components/sections/EventsPreview";
+import { ActivitiesGallery } from "@/components/sections/ActivitiesGallery";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { PartnersStrip } from "@/components/sections/PartnersStrip";
-import { BlogPreview } from "@/components/sections/BlogPreview";
 import { CTASection } from "@/components/sections/CTASection";
 import { heroPhotos, mentorshipPhoto } from "@/lib/photos";
 
@@ -36,7 +33,7 @@ export default function Home() {
         imageSide="right"
       />
       <WhySTEMatters />
-      <ProjectsShowcase />
+      <ActivitiesGallery />
       <ImageTextSection
         image={mentorshipPhoto}
         imageAlt="A GoStem mentor guiding a learner"
@@ -48,10 +45,7 @@ export default function Home() {
         imageSide="left"
         background="tint"
       />
-      <EventsPreview />
       <Testimonials />
-      <PartnersStrip />
-      <BlogPreview />
       <CTASection
         title="Your STEM journey starts here."
         description="Whether you're a learner, a parent, a school or an organisation — there's a way to get involved."

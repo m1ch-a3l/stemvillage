@@ -48,7 +48,7 @@ export default async function ProgrammeDetailPage({
           <div className="flex flex-col gap-6 lg:col-span-2">
             <div className="relative h-56 w-full overflow-hidden rounded-xl">
               <CardMedia
-                photo={getProgrammePhoto(programme.stemAreas)}
+                photo={getProgrammePhoto(programme.slug)}
                 seed={programme.slug}
                 alt={programme.title}
                 priority

@@ -7,27 +7,11 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/layout/Container";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
-import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import { heroPhotos, stemAreaPhotos } from "@/lib/photos";
-import { getImpactStats } from "@/lib/content";
-
-function ArrowBadge({ dark = false }: { dark?: boolean }) {
-  return (
-    <span
-      className={cn(
-        "flex size-8 shrink-0 items-center justify-center rounded-full transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
-        dark ? "bg-brand-indigo-dark text-white" : "bg-brand-gold text-brand-indigo-dark"
-      )}
-    >
-      <ArrowUpRight className="size-4" aria-hidden />
-    </span>
-  );
-}
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const headlineStat = getImpactStats()[0];
 
   const fadeUp = (delay: number) =>
     shouldReduceMotion
@@ -97,21 +81,7 @@ export function Hero() {
         className="relative mt-10 sm:mt-14"
       >
         <Container className="flex items-end gap-3 overflow-x-auto pb-10 sm:gap-4 sm:overflow-visible sm:pb-16">
-        {/* 1. Stat card — tallest */}
-        <Link
-          href="/impact"
-          className="group flex h-56 min-w-[132px] flex-1 flex-col justify-between rounded-3xl bg-brand-indigo p-4 shadow-2xl sm:h-72 sm:min-w-0 sm:p-5"
-        >
-          <ArrowBadge />
-          <div>
-            <span className="block font-heading text-2xl font-bold text-white sm:text-3xl">
-              {headlineStat.value}
-            </span>
-            <span className="text-xs font-medium text-white/70">{headlineStat.label}</span>
-          </div>
-        </Link>
-
-        {/* 2. Rotating photo card — medium */}
+        {/* 1. Rotating photo card — medium */}
         <Link
           href="/stem-areas"
           className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl shadow-xl sm:h-56 sm:min-w-0"
@@ -128,18 +98,7 @@ export function Hero() {
           </span>
         </Link>
 
-        {/* 3. Middle CTA card — shortest */}
-        <Link
-          href="/mentors"
-          className="group flex h-32 min-w-[110px] flex-1 flex-col justify-between rounded-3xl bg-white p-4 shadow-xl sm:h-44 sm:min-w-0"
-        >
-          <span className="font-heading text-sm leading-snug font-bold text-foreground sm:text-base">
-            Join 40+ mentors
-          </span>
-          <ArrowBadge dark />
-        </Link>
-
-        {/* 4. Photo card — medium */}
+        {/* 2. Photo card — medium */}
         <Link
           href="/stem-areas/artificial-intelligence"
           className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl shadow-xl sm:h-56 sm:min-w-0"
@@ -157,7 +116,7 @@ export function Hero() {
           </span>
         </Link>
 
-        {/* 5. Photo + CTA card — tallest */}
+        {/* 3. Photo + CTA card — tallest */}
         <Link
           href="/schools-partnerships"
           className="group relative flex h-56 min-w-[132px] flex-1 flex-col justify-between overflow-hidden rounded-3xl bg-brand-gold p-4 shadow-2xl sm:h-72 sm:min-w-0 sm:p-5"

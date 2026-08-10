@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import type { BlogPost, EventItem } from "@/types/content";
 
 export function pageMetadata({
   title,
@@ -49,45 +48,5 @@ export function organizationJsonLd() {
       addressLocality: siteConfig.location,
     },
     sameAs: Object.values(siteConfig.socials),
-  };
-}
-
-export function eventJsonLd(event: EventItem) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: event.title,
-    description: event.description,
-    startDate: event.date,
-    endDate: event.endDate ?? event.date,
-    eventAttendanceMode: event.isVirtual
-      ? "https://schema.org/OnlineEventAttendanceMode"
-      : "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    location: event.isVirtual
-      ? { "@type": "VirtualLocation", url: siteConfig.url }
-      : { "@type": "Place", name: event.location, address: event.location },
-    organizer: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-    },
-    maximumAttendeeCapacity: event.capacity,
-  };
-}
-
-export function articleJsonLd(post: BlogPost) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: { "@type": "Person", name: post.author },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      url: siteConfig.url,
-    },
   };
 }

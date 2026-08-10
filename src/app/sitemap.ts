@@ -3,8 +3,6 @@ import { siteConfig } from "@/lib/site";
 import {
   getProgrammes,
   getStemAreas,
-  getEvents,
-  getBlogPosts,
 } from "@/lib/content";
 
 const staticRoutes = [
@@ -14,16 +12,9 @@ const staticRoutes = [
   "/stem-areas",
   "/workshops",
   "/schools-partnerships",
-  "/events",
-  "/impact",
-  "/blog",
-  "/resources",
   "/contact",
   "/team",
   "/mentors",
-  "/partners",
-  "/faqs",
-  "/careers",
   "/privacy-policy",
   "/terms-conditions",
 ];
@@ -52,19 +43,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const eventEntries: MetadataRoute.Sitemap = getEvents().map((e) => ({
-    url: `${siteConfig.url}/events/${e.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly",
-    priority: 0.5,
-  }));
-
-  const blogEntries: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "yearly",
-    priority: 0.5,
-  }));
-
-  return [...staticEntries, ...programmeEntries, ...stemAreaEntries, ...eventEntries, ...blogEntries];
+  return [...staticEntries, ...programmeEntries, ...stemAreaEntries];
 }
