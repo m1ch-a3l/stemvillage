@@ -62,12 +62,6 @@ export function Hero() {
       />
 
       <Container className="relative flex flex-col items-center gap-8 pt-20 text-center sm:pt-28">
-        <motion.span
-          {...fadeUp(0)}
-          className="inline-flex w-fit items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-brand-gold uppercase"
-        >
-          {siteConfig.name} — STEM Education & Innovation
-        </motion.span>
         <motion.h1
           {...fadeUp(0.08)}
           className="max-w-3xl text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
