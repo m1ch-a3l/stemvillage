@@ -4,10 +4,11 @@ import { FileText, BookOpen, Wrench, Lightbulb } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
 import { pageMetadata } from "@/lib/seo";
-import { stemAreaPhotos } from "@/lib/photos";
-import { getResources } from "@/lib/content";
+import { stemAreaPhotos, getStemAreaPhoto } from "@/lib/photos";
+import { getResources, getStemAreas } from "@/lib/content";
 import type { Resource } from "@/types/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -27,6 +28,11 @@ const typeIcon: Record<Resource["type"], typeof FileText> = {
 
 export default function ResourcesPage() {
   const resources = getResources();
+  const stemAreas = getStemAreas();
+  const photoForArea = (areaName: string) => {
+    const area = stemAreas.find((a) => a.name === areaName);
+    return area ? getStemAreaPhoto(area.slug) : undefined;
+  };
 
   return (
     <>
@@ -68,19 +74,24 @@ export default function ResourcesPage() {
               return (
                 <div
                   key={resource.slug}
-                  className="flex flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10"
+                  className="flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-                    <Icon className="size-5" aria-hidden />
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="secondary" className="bg-brand-gold-soft text-brand-indigo">
-                      {resource.type}
-                    </Badge>
-                    <Badge variant="outline">{resource.stemArea}</Badge>
+                  <div className="relative h-28 w-full overflow-hidden">
+                    <CardMedia photo={photoForArea(resource.stemArea)} seed={resource.slug} alt={resource.title} />
+                    <span className="absolute bottom-3 left-3 flex size-9 items-center justify-center rounded-lg bg-white/90 text-brand-indigo-dark shadow">
+                      <Icon className="size-4.5" aria-hidden />
+                    </span>
                   </div>
-                  <h3 className="font-heading text-base font-semibold text-foreground">{resource.title}</h3>
-                  <p className="text-sm text-muted-foreground">{resource.description}</p>
+                  <div className="flex flex-1 flex-col gap-3 p-6">
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-brand-gold-soft text-brand-indigo">
+                        {resource.type}
+                      </Badge>
+                      <Badge variant="outline">{resource.stemArea}</Badge>
+                    </div>
+                    <h3 className="font-heading text-base font-semibold text-foreground">{resource.title}</h3>
+                    <p className="text-sm text-muted-foreground">{resource.description}</p>
+                  </div>
                 </div>
               );
             })}

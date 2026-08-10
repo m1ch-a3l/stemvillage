@@ -3,7 +3,8 @@ import { ArrowRight, GraduationCap, Heart, School, Building2 } from "lucide-reac
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Reveal } from "@/components/layout/Reveal";
-import { cn } from "@/lib/utils";
+import { CardMedia } from "@/components/ui/card-media";
+import { heroPhotos, aboutMissionPhoto, eventCategoryPhotos, workshopPhotos } from "@/lib/photos";
 
 const pathways = [
   {
@@ -12,7 +13,7 @@ const pathways = [
     body: "Browse programmes, join a workshop, and build your first project — from your first line of code to your first robot.",
     href: "/programmes",
     icon: GraduationCap,
-    accent: "bg-brand-indigo",
+    photo: heroPhotos[1],
   },
   {
     eyebrow: "Guardians",
@@ -20,7 +21,7 @@ const pathways = [
     body: "Find the right programme for your child and follow their progress through hands-on STEM learning.",
     href: "/programmes",
     icon: Heart,
-    accent: "bg-brand-emerald",
+    photo: aboutMissionPhoto,
   },
   {
     eyebrow: "Educators",
@@ -28,7 +29,7 @@ const pathways = [
     body: "Bring workshops, curriculum support, or a full-year STEM programme into your classroom.",
     href: "/schools-partnerships",
     icon: School,
-    accent: "bg-brand-gold",
+    photo: eventCategoryPhotos["School Visit"],
   },
   {
     eyebrow: "Companies & NGOs",
@@ -36,7 +37,7 @@ const pathways = [
     body: "Sponsor a programme, fund equipment, or run a corporate STEM workshop for your team.",
     href: "/schools-partnerships",
     icon: Building2,
-    accent: "bg-brand-indigo",
+    photo: workshopPhotos["corporate-innovation-sprint"],
   },
 ];
 
@@ -54,17 +55,19 @@ export function WhoItsFor() {
           />
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {pathways.map(({ eyebrow, title, body, href, icon: Icon, accent }, index) => (
+          {pathways.map(({ eyebrow, title, body, href, icon: Icon, photo }, index) => (
             <Reveal key={title} delay={index * 0.08}>
               <Link
                 href={href}
                 className="group flex h-full flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className={cn("h-1.5 w-full", accent)} aria-hidden />
-                <div className="flex flex-1 flex-col gap-3 p-6">
-                  <span className="flex size-11 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-                    <Icon className="size-5.5" aria-hidden />
+                <div className="relative h-28 w-full overflow-hidden">
+                  <CardMedia photo={photo} seed={title} alt={title} />
+                  <span className="absolute bottom-3 left-3 flex size-9 items-center justify-center rounded-lg bg-white/90 text-brand-indigo-dark shadow">
+                    <Icon className="size-4.5" aria-hidden />
                   </span>
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
                   <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
                     {eyebrow}
                   </span>

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { workshopPhotos } from "@/lib/photos";
+import { workshopPhotos, mentorshipPhoto } from "@/lib/photos";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
@@ -67,6 +68,15 @@ export default function ContactPage() {
               </span>
               <h3 className="text-sm font-semibold text-foreground">Location</h3>
               <p className="text-sm text-muted-foreground">{siteConfig.location}</p>
+            </div>
+            <div className="relative h-40 w-full overflow-hidden rounded-xl">
+              <Image
+                src={mentorshipPhoto}
+                alt="A GoStem team member in conversation"
+                fill
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
           <div className="rounded-xl border border-border p-6 sm:p-8 lg:col-span-2">
