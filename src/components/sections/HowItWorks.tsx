@@ -33,7 +33,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="bg-slate-100 py-20 sm:py-24 dark:bg-slate-900">
       <Container className="flex flex-col gap-14">
         <Reveal>
           <SectionHeader
@@ -50,7 +50,7 @@ export function HowItWorks() {
           />
           {steps.map((step, index) => (
             <Reveal key={step.number} delay={index * 0.1} className="relative flex flex-col gap-3">
-              <div className="relative z-10 size-20 overflow-hidden rounded-full ring-4 ring-background">
+              <div className="relative z-10 size-20 overflow-hidden rounded-full ring-4 ring-slate-100 dark:ring-slate-900">
                 <CardMedia photo={step.photo} seed={step.number} alt={step.title} sizes="80px" />
                 <span className="absolute right-0 bottom-0 flex size-7 items-center justify-center rounded-full bg-brand-indigo font-heading text-xs font-bold text-white dark:bg-primary dark:text-primary-foreground">
                   {step.number}
