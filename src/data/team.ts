@@ -6,7 +6,7 @@ export const team: TeamMember[] = [
     slug: "founder-executive-director",
     name: "Founder & Executive Director",
     role: "Executive Director",
-    bio: "Leads STEMAide's strategy and partnerships, with a background in education and technology. Bio to be replaced with real founder details.",
+    bio: "Leads GoStem's strategy and partnerships, with a background in education and technology. Bio to be replaced with real founder details.",
     image: "/images/team/placeholder-1.svg",
   },
   {
@@ -34,7 +34,7 @@ export const team: TeamMember[] = [
     slug: "operations-manager",
     name: "Operations Manager",
     role: "Operations Manager",
-    bio: "Runs day-to-day operations across all STEMAide locations and events. Bio to be replaced with real staff details.",
+    bio: "Runs day-to-day operations across all GoStem locations and events. Bio to be replaced with real staff details.",
     image: "/images/team/placeholder-5.svg",
   },
   {

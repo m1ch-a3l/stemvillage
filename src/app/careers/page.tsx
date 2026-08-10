@@ -9,7 +9,7 @@ import { getCareerOpenings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Careers",
-  description: "Open roles, internships and volunteer opportunities at STEMAide.",
+  description: "Open roles, internships and volunteer opportunities at GoStem.",
   path: "/careers",
 });
 

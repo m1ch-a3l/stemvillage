@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Target, Eye, Heart, Users } from "lucide-react";
+import { Target, Eye, Heart, Users, Quote } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
@@ -9,6 +9,16 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { aboutMissionPhoto } from "@/lib/photos";
+
+// Placeholder organisational history — replace with verified milestones.
+const milestones = [
+  { year: "2021", title: "Founded", body: "GoStem started with a single after-school coding club in Accra." },
+  { year: "2022", title: "Robotics Academy launches", body: "First cohort of STEM for Kids and Robotics Academy learners graduate." },
+  { year: "2023", title: "First school partnerships", body: "GoStem signs its first partner schools and launches the STEM Clubs programme." },
+  { year: "2024", title: "AI programme & mentor network", body: "AI & Machine Learning programme launches; volunteer mentor network passes 20 mentors." },
+  { year: "2025", title: "Community outreach expands", body: "Outreach reaches underserved regions; first Coding Bootcamp cohort graduates." },
+  { year: "2026", title: "Continuing to grow", body: "Expanding programme reach and school partnerships nationwide." },
+];
 
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
@@ -27,7 +37,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Us"
+        eyebrow={`About Us · Est. ${siteConfig.foundedYear}`}
         title="Building the organisation behind Ghana's next STEM generation."
         description={siteConfig.description}
       />
@@ -37,7 +47,7 @@ export default function AboutPage() {
           <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-80">
             <Image
               src={aboutMissionPhoto}
-              alt="STEMAide team members collaborating"
+              alt="GoStem team members collaborating"
               fill
               sizes="100vw"
               className="object-cover"
@@ -74,6 +84,23 @@ export default function AboutPage() {
               That belief shapes everything from our curriculum design to how we measure success: not by
               attendance, but by what a learner can build by the end of a programme.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-8">
+        <Container>
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-2xl bg-brand-indigo px-8 py-12 text-center text-white sm:px-14">
+            <Quote className="size-8 text-brand-gold" aria-hidden />
+            <p className="font-heading text-xl leading-snug font-medium text-balance sm:text-2xl">
+              &ldquo;We didn&apos;t want to teach STEM the way it was taught to us — from a textbook,
+              once a term. We wanted learners building something real from their very first
+              session, because that&apos;s when curiosity turns into confidence.&rdquo;
+            </p>
+            <div className="flex flex-col items-center">
+              <span className="text-sm font-semibold">Founder &amp; Executive Director</span>
+              <span className="text-xs text-white/60">{siteConfig.name}, founded {siteConfig.foundedYear}</span>
+            </div>
           </div>
         </Container>
       </section>
@@ -123,6 +150,31 @@ export default function AboutPage() {
       </section>
 
       <section className="py-16 sm:py-20">
+        <Container className="flex flex-col gap-10">
+          <SectionHeader
+            eyebrow="Our Journey"
+            title="How we got here."
+            description="Placeholder milestones — to be replaced with verified organisational history."
+            align="center"
+            className="mx-auto"
+          />
+          <div className="relative mx-auto flex max-w-3xl flex-col gap-8 before:absolute before:top-1 before:bottom-1 before:left-[27px] before:w-px before:bg-border sm:before:left-[31px]">
+            {milestones.map((milestone) => (
+              <div key={milestone.year} className="relative flex gap-5">
+                <span className="relative z-10 flex size-14 shrink-0 items-center justify-center rounded-full bg-brand-indigo font-heading text-sm font-bold text-white dark:bg-primary dark:text-primary-foreground">
+                  {milestone.year}
+                </span>
+                <div className="flex flex-col gap-1 pt-2.5">
+                  <h3 className="font-heading text-base font-semibold text-foreground">{milestone.title}</h3>
+                  <p className="text-sm text-muted-foreground">{milestone.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-secondary/40 py-16 sm:py-20">
         <Container className="flex flex-col items-center gap-4 text-center">
           <span className="flex size-12 items-center justify-center rounded-full bg-brand-gold-soft text-brand-indigo">
             <Users className="size-6" aria-hidden />

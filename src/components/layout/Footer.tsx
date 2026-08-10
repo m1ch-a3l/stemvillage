@@ -46,7 +46,7 @@ export function Footer() {
           <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
               <span className="flex size-8 items-center justify-center rounded-lg bg-brand-gold text-brand-indigo-dark">
-                <span className="text-sm font-bold">S</span>
+                <span className="text-sm font-bold">G</span>
               </span>
               {siteConfig.name}
             </Link>

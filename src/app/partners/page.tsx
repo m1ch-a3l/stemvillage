@@ -9,7 +9,7 @@ import type { Partner } from "@/types/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Partners",
-  description: "Schools, companies, NGOs, universities and government organisations partnering with STEMAide.",
+  description: "Schools, companies, NGOs, universities and government organisations partnering with GoStem.",
   path: "/partners",
 });
 

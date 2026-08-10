@@ -1,9 +1,11 @@
 import { Hero } from "@/components/sections/Hero";
 import { ImpactStats } from "@/components/sections/ImpactStats";
+import { WhoItsFor } from "@/components/sections/WhoItsFor";
 import { MissionSection } from "@/components/sections/MissionSection";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { StemAreasGrid } from "@/components/sections/StemAreasGrid";
 import { ProgrammesGrid } from "@/components/sections/ProgrammesGrid";
-import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { WhySTEMatters } from "@/components/sections/WhySTEMatters";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { EventsPreview } from "@/components/sections/EventsPreview";
@@ -17,10 +19,12 @@ export default function Home() {
     <>
       <Hero />
       <ImpactStats />
+      <WhoItsFor />
       <MissionSection />
+      <HowItWorks />
+      <WhatWeDo />
       <StemAreasGrid />
       <ProgrammesGrid />
-      <WhatWeDo />
       <WhySTEMatters />
       <ProjectsShowcase />
       <EventsPreview />

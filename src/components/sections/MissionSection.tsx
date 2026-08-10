@@ -23,12 +23,12 @@ const pillars = [
 
 export function MissionSection() {
   return (
-    <section id="mission" className="py-20 sm:py-24">
+    <section id="mission" className="bg-secondary/40 py-20 sm:py-24">
       <Container className="flex flex-col gap-12">
         <SectionHeader
           eyebrow="Who We Are"
           title="Equipping learners with the skills to build the future."
-          description="STEMAide is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
+          description="GoStem is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
         />
         <div className="grid gap-6 sm:grid-cols-3">
           {pillars.map(({ icon: Icon, title, body }) => (

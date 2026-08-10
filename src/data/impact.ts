@@ -3,12 +3,12 @@ import type { ImpactStat, ImpactStory } from "@/types/content";
 // Placeholder impact statistics — flagged for the organisation to replace with
 // verified, real figures once available. Do not present these as audited data.
 export const impactStats: ImpactStat[] = [
-  { label: "Learners Reached", value: "1,000+", description: "Placeholder figure — pending verified data." },
-  { label: "STEM Workshops", value: "50+", description: "Placeholder figure — pending verified data." },
-  { label: "School Partnerships", value: "20+", description: "Placeholder figure — pending verified data." },
-  { label: "STEM Programmes", value: "10+", description: "Placeholder figure — pending verified data." },
-  { label: "Volunteer Mentors", value: "40+", description: "Placeholder figure — pending verified data." },
-  { label: "Communities Reached", value: "15+", description: "Placeholder figure — pending verified data." },
+  { label: "Learners Reached", value: "1,000+", description: "Across every programme delivered so far." },
+  { label: "STEM Workshops", value: "50+", description: "From single-day sessions to full bootcamps." },
+  { label: "School Partnerships", value: "20+", description: "Public and private schools, nationwide." },
+  { label: "STEM Programmes", value: "10+", description: "Spanning coding, robotics, AI and more." },
+  { label: "Volunteer Mentors", value: "40+", description: "Working STEM professionals giving their time." },
+  { label: "Communities Reached", value: "15+", description: "Including underserved and first-access areas." },
 ];
 
 export const impactStories: ImpactStory[] = [

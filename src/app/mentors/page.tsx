@@ -9,7 +9,7 @@ import { getMentors } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Mentors",
-  description: "Meet the STEM professionals mentoring STEMAide learners, and learn how to become a mentor yourself.",
+  description: "Meet the STEM professionals mentoring GoStem learners, and learn how to become a mentor yourself.",
   path: "/mentors",
 });
 

@@ -43,7 +43,7 @@ export default function OpengraphImage() {
               fontSize: 28,
             }}
           >
-            S
+            G
           </div>
           {siteConfig.name}
         </div>

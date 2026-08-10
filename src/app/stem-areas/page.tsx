@@ -8,7 +8,7 @@ import { getStemAreas } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "STEM Areas",
-  description: "Explore the seven STEM areas STEMAide teaches — coding, robotics, AI, data science, cybersecurity, mathematics and engineering.",
+  description: "Explore the seven STEM areas GoStem teaches — coding, robotics, AI, data science, cybersecurity, mathematics and engineering.",
   path: "/stem-areas",
 });
 

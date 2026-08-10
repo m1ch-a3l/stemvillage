@@ -20,7 +20,7 @@ export interface PartnershipFormState {
 }
 
 // Placeholder integration point: route submissions to a real CRM/email inbox
-// (e.g. partnerships@stemaide.org) once an email provider is configured.
+// (e.g. partnerships@gostem.org) once an email provider is configured.
 export async function submitPartnershipEnquiry(
   _prevState: PartnershipFormState,
   formData: FormData

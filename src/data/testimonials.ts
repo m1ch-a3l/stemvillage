@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "STEMAide's after-school club gave us a ready-made STEM programme we didn't have the staff capacity to build ourselves. Our students look forward to it every week.",
+      "GoStem's after-school club gave us a ready-made STEM programme we didn't have the staff capacity to build ourselves. Our students look forward to it every week.",
     name: "Placeholder Teacher",
     role: "STEM Coordinator",
     affiliation: "Partner School",

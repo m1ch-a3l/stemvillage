@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: "Get in touch with STEMAide for general enquiries, programme information, or partnership discussions.",
+  description: "Get in touch with GoStem for general enquiries, programme information, or partnership discussions.",
   path: "/contact",
 });
 

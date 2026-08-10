@@ -8,7 +8,7 @@ import { getTeam } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Our Team",
-  description: "Meet the team behind STEMAide's programmes and partnerships.",
+  description: "Meet the team behind GoStem's programmes and partnerships.",
   path: "/team",
 });
 

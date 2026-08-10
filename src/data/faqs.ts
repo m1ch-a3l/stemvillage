@@ -2,7 +2,7 @@ import type { Faq } from "@/types/content";
 
 export const faqs: Faq[] = [
   {
-    question: "Who are STEMAide's programmes for?",
+    question: "Who are GoStem's programmes for?",
     answer:
       "Our programmes serve learners from age 8 through adulthood, including students, career switchers, schools, and working professionals looking to build STEM skills. Each programme lists its target audience.",
     category: "General",
@@ -20,7 +20,7 @@ export const faqs: Faq[] = [
     category: "Programmes",
   },
   {
-    question: "How does a school start a partnership with STEMAide?",
+    question: "How does a school start a partnership with GoStem?",
     answer:
       "Schools can submit a partnership enquiry through our Schools & Partnerships page or attend a School Partnership Information Session. Our team will follow up to understand your school's needs and propose a programme structure.",
     category: "Schools",
@@ -32,7 +32,7 @@ export const faqs: Faq[] = [
     category: "Schools",
   },
   {
-    question: "How can an organisation partner with or sponsor STEMAide?",
+    question: "How can an organisation partner with or sponsor GoStem?",
     answer:
       "Organisations can sponsor programmes, fund equipment, host corporate workshops, or provide employee mentors. Reach out via our Partnerships enquiry form and our team will discuss options that fit your goals.",
     category: "Partnerships",

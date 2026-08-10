@@ -14,7 +14,7 @@ import type { Faq } from "@/types/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "FAQs",
-  description: "Frequently asked questions about STEMAide programmes, schools, partnerships and volunteering.",
+  description: "Frequently asked questions about GoStem programmes, schools, partnerships and volunteering.",
   path: "/faqs",
 });
 

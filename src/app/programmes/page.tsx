@@ -8,7 +8,7 @@ import { getProgrammes } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Programmes",
-  description: "Explore STEMAide's structured STEM programmes — from STEM for Kids to Coding Bootcamp and Career Mentorship.",
+  description: "Explore GoStem's structured STEM programmes — from STEM for Kids to Coding Bootcamp and Career Mentorship.",
   path: "/programmes",
 });
 

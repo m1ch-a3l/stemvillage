@@ -7,7 +7,7 @@ import { getUpcomingEvents, getPastEvents } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Events",
-  description: "Upcoming and past STEMAide events — workshops, competitions, hackathons, STEM fairs and info sessions.",
+  description: "Upcoming and past GoStem events — workshops, competitions, hackathons, STEM fairs and info sessions.",
   path: "/events",
 });
 

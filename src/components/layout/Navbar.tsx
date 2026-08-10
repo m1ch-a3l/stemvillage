@@ -29,7 +29,7 @@ export function Navbar() {
           className="flex items-center gap-2 font-heading text-lg font-bold text-brand-indigo dark:text-primary"
         >
           <span className="flex size-8 items-center justify-center rounded-lg bg-brand-indigo text-white">
-            <span className="text-sm font-bold">S</span>
+            <span className="text-sm font-bold">G</span>
           </span>
           {siteConfig.name}
         </Link>

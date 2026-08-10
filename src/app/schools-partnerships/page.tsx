@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Schools & Partnerships",
-  description: "Partner with STEMAide as a school or organisation — workshops, curriculum partnerships, sponsorship and corporate training.",
+  description: "Partner with GoStem as a school or organisation — workshops, curriculum partnerships, sponsorship and corporate training.",
   path: "/schools-partnerships",
 });
 
@@ -23,7 +23,7 @@ const orgBenefits = [
   "Request corporate STEM training for your team",
   "Book workshops or innovation sprints",
   "Sponsor programmes or equipment",
-  "Become an official STEMAide partner",
+  "Become an official GoStem partner",
 ];
 
 export default function SchoolsPartnershipsPage() {
