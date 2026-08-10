@@ -3,11 +3,12 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { StatCounter } from "@/components/layout/StatCounter";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { getImpactPhoto } from "@/lib/photos";
 import { getImpactStats, getImpactStories } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -50,8 +51,8 @@ export default function ImpactPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             {stories.map((story) => (
               <div key={story.title} className="flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 sm:flex-row">
-                <div className="h-40 w-full overflow-hidden sm:h-auto sm:w-48 sm:shrink-0">
-                  <PlaceholderArt seed={story.title} variant="orbit" />
+                <div className="relative h-40 w-full overflow-hidden sm:h-auto sm:w-48 sm:shrink-0">
+                  <CardMedia photo={getImpactPhoto(story.category)} seed={story.title} alt={story.title} />
                 </div>
                 <div className="flex flex-col gap-2 p-5">
                   <Badge variant="secondary" className="w-fit bg-brand-gold-soft text-brand-indigo">

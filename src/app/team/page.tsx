@@ -3,6 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { TeamMemberCard } from "@/components/cards/TeamMemberCard";
 import { pageMetadata } from "@/lib/seo";
+import { getTeamPhoto } from "@/lib/photos";
 import { getTeam } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -31,6 +32,7 @@ export default function TeamPage() {
                 name={member.name}
                 role={member.role}
                 bio={member.bio}
+                photo={getTeamPhoto(member.slug)}
               />
             ))}
           </div>

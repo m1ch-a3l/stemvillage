@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Layers } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
-import { PlaceholderArt } from "@/components/ui/placeholder-art";
+import { CardMedia } from "@/components/ui/card-media";
 import { Badge } from "@/components/ui/badge";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { getWorkshopPhoto } from "@/lib/photos";
 import { getWorkshops } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -32,8 +33,8 @@ export default function WorkshopsPage() {
                 key={workshop.slug}
                 className="flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10"
               >
-                <div className="h-32 w-full overflow-hidden">
-                  <PlaceholderArt seed={workshop.slug} variant="grid" />
+                <div className="relative h-32 w-full overflow-hidden">
+                  <CardMedia photo={getWorkshopPhoto(workshop.slug)} seed={workshop.slug} alt={workshop.title} />
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-5">
                   <span className="flex size-9 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">

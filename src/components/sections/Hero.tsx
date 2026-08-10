@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Code2, BrainCircuit, Bot, Sigma } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/layout/Container";
+import { HeroCarousel } from "@/components/sections/HeroCarousel";
 import { siteConfig } from "@/lib/site";
-import { heroPhoto } from "@/lib/photos";
+import { heroPhotos } from "@/lib/photos";
 
 const floatingBadges = [
   { label: "Coding", Icon: Code2, className: "top-6 left-2 sm:left-6" },
@@ -81,17 +81,7 @@ export function Hero() {
           {...fadeUp(0.2)}
           className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none"
         >
-          <div className="relative size-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-            <Image
-              src={heroPhoto}
-              alt="Students collaborating on a technology project"
-              fill
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-indigo-dark/60 via-transparent to-transparent" />
-          </div>
+          <HeroCarousel images={heroPhotos} alt="Students exploring coding, robotics and technology" />
           {floatingBadges.map(({ label, Icon, className }) => (
             <div
               key={label}

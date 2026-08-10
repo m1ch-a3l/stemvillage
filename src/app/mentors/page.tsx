@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { TeamMemberCard } from "@/components/cards/TeamMemberCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
+import { getMentorPhoto } from "@/lib/photos";
 import { getMentors } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -32,6 +33,7 @@ export default function MentorsPage() {
                 name={mentor.name}
                 role={`${mentor.title} · ${mentor.focusArea}`}
                 bio={mentor.bio}
+                photo={getMentorPhoto(mentor.slug)}
               />
             ))}
           </div>
