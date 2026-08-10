@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle2, School, Building2 } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { PartnershipForm } from "@/components/forms/PartnershipForm";
 import { pageMetadata } from "@/lib/seo";
-import { eventCategoryPhotos } from "@/lib/photos";
+import { eventCategoryPhotos, stemAreaPhotos } from "@/lib/photos";
 
 export const metadata: Metadata = pageMetadata({
   title: "Schools & Partnerships",
@@ -37,34 +38,45 @@ export default function SchoolsPartnershipsPage() {
         image={eventCategoryPhotos["School Visit"]}
       />
       <section className="py-16 sm:py-20">
-        <Container className="grid gap-6 sm:grid-cols-2">
-          <div className="flex flex-col gap-4 rounded-xl border border-border p-6">
-            <span className="flex size-11 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-              <School className="size-5.5" aria-hidden />
-            </span>
-            <h2 className="font-heading text-lg font-semibold">For Schools</h2>
-            <ul className="flex flex-col gap-2">
-              {schoolBenefits.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-emerald" aria-hidden />
-                  {item}
-                </li>
-              ))}
-            </ul>
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div className="relative order-first h-64 w-full overflow-hidden rounded-2xl sm:h-80 lg:order-none lg:h-full lg:min-h-[400px]">
+            <Image
+              src={stemAreaPhotos["coding-programming"]}
+              alt="Students working on a school STEM programme"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
           </div>
-          <div className="flex flex-col gap-4 rounded-xl border border-border p-6">
-            <span className="flex size-11 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-              <Building2 className="size-5.5" aria-hidden />
-            </span>
-            <h2 className="font-heading text-lg font-semibold">For Organisations</h2>
-            <ul className="flex flex-col gap-2">
-              {orgBenefits.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-emerald" aria-hidden />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 rounded-xl border border-border p-6">
+              <span className="flex size-11 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
+                <School className="size-5.5" aria-hidden />
+              </span>
+              <h2 className="font-heading text-lg font-semibold">For Schools</h2>
+              <ul className="flex flex-col gap-2">
+                {schoolBenefits.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-emerald" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-col gap-4 rounded-xl border border-border p-6">
+              <span className="flex size-11 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
+                <Building2 className="size-5.5" aria-hidden />
+              </span>
+              <h2 className="font-heading text-lg font-semibold">For Organisations</h2>
+              <ul className="flex flex-col gap-2">
+                {orgBenefits.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-brand-emerald" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Container>
       </section>

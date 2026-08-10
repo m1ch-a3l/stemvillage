@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { Reveal } from "@/components/layout/Reveal";
 
 const steps = [
   {
@@ -28,25 +29,27 @@ export function HowItWorks() {
   return (
     <section className="py-20 sm:py-24">
       <Container className="flex flex-col gap-14">
-        <SectionHeader
-          eyebrow="How It Works"
-          title="From first step to next step."
-          align="center"
-          className="mx-auto"
-        />
+        <Reveal>
+          <SectionHeader
+            eyebrow="How It Works"
+            title="From first step to next step."
+            align="center"
+            className="mx-auto"
+          />
+        </Reveal>
         <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div
             aria-hidden
             className="absolute top-7 right-0 left-0 hidden h-px bg-border lg:block"
           />
-          {steps.map((step) => (
-            <div key={step.number} className="relative flex flex-col gap-3">
+          {steps.map((step, index) => (
+            <Reveal key={step.number} delay={index * 0.1} className="relative flex flex-col gap-3">
               <span className="relative z-10 flex size-14 items-center justify-center rounded-full bg-brand-indigo font-heading text-lg font-bold text-white dark:bg-primary dark:text-primary-foreground">
                 {step.number}
               </span>
               <h3 className="font-heading text-lg font-semibold text-foreground">{step.title}</h3>
               <p className="text-sm text-muted-foreground">{step.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

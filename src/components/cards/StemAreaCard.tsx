@@ -9,7 +9,7 @@ export function StemAreaCard({ area }: { area: StemArea }) {
   return (
     <Link
       href={`/stem-areas/${area.slug}`}
-      className="group flex flex-col gap-4 rounded-xl bg-card p-6 ring-1 ring-foreground/10 transition-shadow hover:shadow-lg"
+      className="group flex h-full flex-col gap-4 rounded-xl bg-card p-6 ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg"
     >
       <span className="flex size-11 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
         <Icon className="size-5.5" aria-hidden />

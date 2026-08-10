@@ -10,7 +10,7 @@ export function ProjectCard({ project }: { project: Project }) {
   });
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-shadow hover:shadow-lg">
+    <div className="group flex h-full flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg">
       <div className="relative h-44 w-full overflow-hidden">
         <CardMedia photo={getProjectPhoto(project.slug)} seed={project.slug} alt={project.name} />
       </div>

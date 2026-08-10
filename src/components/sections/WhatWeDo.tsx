@@ -10,24 +10,36 @@ const services = [
   { icon: Building2, title: "Corporate Training" },
 ];
 
+function ServiceItem({ icon: Icon, title }: (typeof services)[number]) {
+  return (
+    <span className="flex shrink-0 items-center gap-2 text-sm font-medium text-foreground/80">
+      <Icon className="size-4 text-brand-emerald" aria-hidden />
+      {title}
+    </span>
+  );
+}
+
 export function WhatWeDo() {
   return (
-    <section className="py-10">
-      <Container>
-        <div className="flex flex-col items-center gap-6 border-y border-border py-8 sm:flex-row sm:justify-between">
-          <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-            What We Do
-          </span>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-            {services.map(({ icon: Icon, title }) => (
-              <span key={title} className="flex items-center gap-2 text-sm font-medium text-foreground/80">
-                <Icon className="size-4 text-brand-emerald" aria-hidden />
-                {title}
-              </span>
-            ))}
-          </div>
-        </div>
+    <section className="overflow-hidden border-y border-border py-8">
+      <Container className="mb-4">
+        <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+          What We Do
+        </span>
       </Container>
+      <div
+        className="overflow-hidden"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        }}
+      >
+        <div className="animate-marquee flex w-max gap-10 hover:[animation-play-state:paused]">
+          {[...services, ...services].map((service, index) => (
+            <ServiceItem key={`${service.title}-${index}`} {...service} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

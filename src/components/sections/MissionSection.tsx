@@ -1,6 +1,7 @@
 import { Target, Eye, Heart } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { Reveal } from "@/components/layout/Reveal";
 import { ButtonLink } from "@/components/ui/button-link";
 
 const pillars = [
@@ -25,20 +26,24 @@ export function MissionSection() {
   return (
     <section id="mission" className="bg-secondary/40 py-20 sm:py-24">
       <Container className="flex flex-col gap-12">
-        <SectionHeader
-          eyebrow="Who We Are"
-          title="Equipping learners with the skills to build the future."
-          description="GoStem is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
-        />
+        <Reveal>
+          <SectionHeader
+            eyebrow="Who We Are"
+            title="Equipping learners with the skills to build the future."
+            description="GoStem is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
+          />
+        </Reveal>
         <div className="grid gap-6 sm:grid-cols-3">
-          {pillars.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="flex flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10">
-              <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-                <Icon className="size-5" aria-hidden />
-              </span>
-              <h3 className="font-heading text-base font-semibold text-foreground">{title}</h3>
-              <p className="text-sm text-muted-foreground">{body}</p>
-            </div>
+          {pillars.map(({ icon: Icon, title, body }, index) => (
+            <Reveal key={title} delay={index * 0.1}>
+              <div className="flex h-full flex-col gap-3 rounded-xl bg-card p-6 ring-1 ring-foreground/10 transition-transform hover:-translate-y-1">
+                <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
+                  <Icon className="size-5" aria-hidden />
+                </span>
+                <h3 className="font-heading text-base font-semibold text-foreground">{title}</h3>
+                <p className="text-sm text-muted-foreground">{body}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
         <div>

@@ -42,48 +42,41 @@ export default function AboutPage() {
         description={siteConfig.description}
       />
 
-      <section className="py-12 sm:py-16">
-        <Container>
-          <div className="relative h-56 w-full overflow-hidden rounded-xl sm:h-80">
+      <section className="py-16 sm:py-20">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div className="relative order-first h-64 w-full overflow-hidden rounded-2xl sm:h-96 lg:order-none lg:h-full lg:min-h-[420px]">
             <Image
               src={aboutMissionPhoto}
               alt="GoStem team members collaborating"
               fill
-              sizes="100vw"
+              sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-cover"
               priority
             />
           </div>
-        </Container>
-      </section>
-
-      <section className="py-4 sm:py-6">
-        <Container className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div className="flex flex-col gap-4">
-            <SectionHeader eyebrow="Who We Are" title="A STEM education and innovation organisation." />
-            <p className="text-muted-foreground">
-              {siteConfig.name} runs hands-on technology and science programmes for students, schools,
-              organisations and communities. We started from a simple observation: STEM subjects are usually
-              taught in the abstract, when what actually builds confidence and skill is building something
-              real, seeing it work, and iterating when it doesn&apos;t.
-            </p>
-            <p className="text-muted-foreground">
-              Today that means coding classes for teens, robotics labs, AI literacy sessions, school
-              partnerships, and community outreach — all built around the same practical, project-based
-              approach.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <SectionHeader eyebrow="What We Believe" title="Technology education should build builders." />
-            <p className="text-muted-foreground">
-              We believe the gap between &ldquo;using technology&rdquo; and &ldquo;building technology&rdquo;
-              is closing fast — and that the young people who close it early will have significantly more
-              opportunity ahead of them, regardless of the career path they ultimately choose.
-            </p>
-            <p className="text-muted-foreground">
-              That belief shapes everything from our curriculum design to how we measure success: not by
-              attendance, but by what a learner can build by the end of a programme.
-            </p>
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <SectionHeader eyebrow="Who We Are" title="A STEM education and innovation organisation." />
+              <p className="text-muted-foreground">
+                {siteConfig.name} runs hands-on technology and science programmes for students, schools,
+                organisations and communities. We started from a simple observation: STEM subjects are usually
+                taught in the abstract, when what actually builds confidence and skill is building something
+                real, seeing it work, and iterating when it doesn&apos;t.
+              </p>
+              <p className="text-muted-foreground">
+                Today that means coding classes for teens, robotics labs, AI literacy sessions, school
+                partnerships, and community outreach — all built around the same practical, project-based
+                approach.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <SectionHeader eyebrow="What We Believe" title="Technology education should build builders." />
+              <p className="text-muted-foreground">
+                We believe the gap between &ldquo;using technology&rdquo; and &ldquo;building technology&rdquo;
+                is closing fast — and that the young people who close it early will have significantly more
+                opportunity ahead of them, regardless of the career path they ultimately choose.
+              </p>
+            </div>
           </div>
         </Container>
       </section>

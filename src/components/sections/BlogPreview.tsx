@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { Reveal } from "@/components/layout/Reveal";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { ButtonLink } from "@/components/ui/button-link";
 import { getBlogPosts } from "@/lib/content";
@@ -10,7 +11,7 @@ export function BlogPreview() {
   return (
     <section className="bg-secondary/40 py-20 sm:py-24">
       <Container className="flex flex-col gap-10">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <SectionHeader
             eyebrow="STEM Insights"
             title="From the blog."
@@ -19,10 +20,12 @@ export function BlogPreview() {
           <ButtonLink href="/blog" variant="outline" className="h-10 shrink-0 px-5 text-sm">
             Read All Insights
           </ButtonLink>
-        </div>
+        </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+          {posts.map((post, index) => (
+            <Reveal key={post.slug} delay={index * 0.08}>
+              <BlogCard post={post} />
+            </Reveal>
           ))}
         </div>
       </Container>

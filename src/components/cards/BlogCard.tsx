@@ -14,7 +14,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-shadow hover:shadow-lg"
+      className="group flex h-full flex-col overflow-hidden rounded-xl bg-card ring-1 ring-foreground/10 transition-all hover:-translate-y-1 hover:shadow-lg"
     >
       <div className="relative h-40 w-full overflow-hidden">
         <CardMedia photo={getBlogPhoto(post.category)} seed={post.slug} alt={post.title} />

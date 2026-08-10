@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FileText, BookOpen, Wrench, Lightbulb } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Badge } from "@/components/ui/badge";
 import { pageMetadata } from "@/lib/seo";
 import { stemAreaPhotos } from "@/lib/photos";
@@ -34,7 +36,31 @@ export default function ResourcesPage() {
         description="Guides, tutorials, tools and project ideas — a growing library for learners, parents and teachers to use anytime."
         image={stemAreaPhotos["mathematics-science"]}
       />
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:pt-20 sm:pb-8">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-72">
+            <Image
+              src={stemAreaPhotos["coding-programming"]}
+              alt="Learner working through a STEM resource"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <SectionHeader
+              eyebrow="Built for self-paced learning"
+              title="Resources built to be used, not just downloaded."
+            />
+            <p className="text-muted-foreground">
+              Every guide and project idea here is written the same way we teach in our
+              programmes — practical first, theory second. Free to use, no account required.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-8 sm:pt-8 sm:pb-20">
         <Container>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => {

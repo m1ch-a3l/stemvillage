@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { Reveal } from "@/components/layout/Reveal";
 import { stemAreaPhotos } from "@/lib/photos";
 
 const points = [
@@ -37,17 +38,23 @@ export function WhySTEMatters() {
         className="absolute inset-0 bg-gradient-to-r from-brand-indigo via-brand-indigo/95 to-brand-indigo/70"
       />
       <Container className="relative flex flex-col gap-10">
-        <SectionHeader
-          eyebrow="Why STEM Matters"
-          title="STEM education isn't just about a subject — it's about readiness."
-          className="[&_h2]:text-white [&_p]:text-white/75 [&_span]:bg-white/10 [&_span]:text-brand-gold"
-        />
+        <Reveal>
+          <SectionHeader
+            eyebrow="Why STEM Matters"
+            title="STEM education isn't just about a subject — it's about readiness."
+            className="[&_h2]:text-white [&_p]:text-white/75 [&_span]:bg-white/10 [&_span]:text-brand-gold"
+          />
+        </Reveal>
         <div className="grid gap-8 sm:grid-cols-2">
-          {points.map((point) => (
-            <div key={point.title} className="flex flex-col gap-2 border-l-2 border-brand-gold pl-5">
+          {points.map((point, index) => (
+            <Reveal
+              key={point.title}
+              delay={index * 0.08}
+              className="flex flex-col gap-2 border-l-2 border-brand-gold pl-5"
+            >
               <h3 className="font-heading text-lg font-semibold">{point.title}</h3>
               <p className="text-sm text-white/70">{point.body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>
