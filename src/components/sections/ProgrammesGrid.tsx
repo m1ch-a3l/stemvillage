@@ -1,30 +1,30 @@
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Reveal } from "@/components/layout/Reveal";
-import { ProgrammeCard } from "@/components/cards/ProgrammeCard";
+import { LearningTribeCard } from "@/components/cards/LearningTribeCard";
 import { ButtonLink } from "@/components/ui/button-link";
-import { getFeaturedProgrammes } from "@/lib/content";
+import { getLearningTribes } from "@/lib/content";
 
 export function ProgrammesGrid() {
-  const programmes = getFeaturedProgrammes();
+  const tribes = getLearningTribes();
 
   return (
     <section className="py-20 sm:py-24">
       <Container className="flex flex-col gap-10">
         <Reveal className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <SectionHeader
-            eyebrow="Programmes"
-            title="Structured programmes for every stage."
-            description="From a first introduction to coding to a full career-mentorship track — find the programme that matches where a learner is today."
+            eyebrow="Our Learning Tribes"
+            title="A custom-built pathway for every age."
+            description="Whether your child is taking their first steps in logic or prototyping real-world software, we have a custom-built pathway for them."
           />
           <ButtonLink href="/programmes" variant="outline" className="h-10 shrink-0 px-5 text-sm">
-            View All Programmes
+            View All Learning Tribes
           </ButtonLink>
         </Reveal>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {programmes.map((programme, index) => (
-            <Reveal key={programme.slug} delay={index * 0.08}>
-              <ProgrammeCard programme={programme} />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {tribes.map((tribe, index) => (
+            <Reveal key={tribe.slug} delay={index * 0.08}>
+              <LearningTribeCard tribe={tribe} />
             </Reveal>
           ))}
         </div>

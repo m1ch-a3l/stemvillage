@@ -2,35 +2,43 @@ import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Reveal } from "@/components/layout/Reveal";
+import { cn } from "@/lib/utils";
 
 const activities = [
   {
     image: "/images/photos/gallery-activities/469717204_555974400685162_6541074027306864709_n.jpg",
-    label: "Hands-On Computing",
+    alt: "Learners at a hands-on computing session",
+    span: "sm:col-span-2 sm:row-span-2",
   },
   {
     image: "/images/photos/gallery-activities/475528451_594315403517728_2407485001173510194_n.jpg",
-    label: "Group Coding Sessions",
+    alt: "A group coding session around a table",
+    span: "",
   },
   {
     image: "/images/photos/gallery-activities/469453128_555974410685161_4131591071462763136_n.jpg",
-    label: "Hardware Training",
+    alt: "Learners setting up hardware during training",
+    span: "",
   },
   {
     image: "/images/photos/gallery-activities/469477605_555974744018461_6866936589855080471_n.jpg",
-    label: "Facilitator-Led Sessions",
+    alt: "A facilitator leading a session",
+    span: "",
   },
   {
     image: "/images/photos/gallery-activities/475386634_594315696851032_6012668746520625730_n.jpg",
-    label: "Peer Learning",
+    alt: "Learners collaborating in a peer learning session",
+    span: "",
   },
   {
     image: "/images/photos/gallery-activities/469748197_555974397351829_7760446269280654864_n.jpg",
-    label: "Tech Talks",
+    alt: "A tech talk in progress",
+    span: "sm:col-span-2",
   },
   {
     image: "/images/photos/gallery-activities/469448902_555974464018489_1738310757996980196_n.jpg",
-    label: "Classroom Learning",
+    alt: "Learners in a classroom setting",
+    span: "sm:col-span-2",
   },
 ] as const;
 
@@ -45,24 +53,23 @@ export function ActivitiesGallery() {
             description="A look at our workshops, bootcamps, school visits and community sessions — real people, hands-on learning."
           />
         </Reveal>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:auto-rows-[160px]">
           {activities.map((activity, index) => (
             <Reveal
-              key={activity.label}
-              delay={(index % 3) * 0.08}
-              className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg"
+              key={activity.image}
+              delay={(index % 4) * 0.06}
+              className={cn(
+                "group relative aspect-square overflow-hidden rounded-2xl border-4 border-white shadow-lg sm:aspect-auto",
+                activity.span
+              )}
             >
               <Image
                 src={activity.image}
-                alt={activity.label}
+                alt={activity.alt}
                 fill
                 sizes="(min-width: 1024px) 30vw, 50vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              <span className="pointer-events-none absolute bottom-3 left-3 text-sm font-semibold text-white sm:text-base">
-                {activity.label}
-              </span>
             </Reveal>
           ))}
         </div>

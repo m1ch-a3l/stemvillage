@@ -26,10 +26,10 @@ const pillars = [
 
 export function MissionSection() {
   return (
-    <section id="mission" className="bg-secondary/40 py-20 sm:py-24">
+    <section id="mission" className="bg-slate-100 py-20 sm:py-24 dark:bg-slate-900">
       <Container className="flex flex-col gap-12">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <Reveal direction="none" className="relative order-first h-64 w-full overflow-hidden rounded-2xl sm:h-80 lg:order-none">
+          <Reveal direction="none" className="relative order-first h-64 w-full overflow-hidden rounded-2xl border-4 border-white shadow-lg sm:h-80 lg:order-none">
             <Image
               src={aboutMissionPhoto}
               alt="GoStem learners and mentors collaborating"
@@ -42,7 +42,7 @@ export function MissionSection() {
             <SectionHeader
               eyebrow="Who We Are"
               title="Equipping learners with the skills to build the future."
-              description="StemVillage is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
+              description="STEM Village is a STEM education and innovation organisation working with students, schools, and communities to make technology education practical, hands-on and genuinely accessible."
             />
             <div>
               <ButtonLink href="/about" variant="outline" className="h-10 px-5 text-sm">

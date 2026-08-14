@@ -29,12 +29,12 @@ export function ImageTextSection({
   background = "default",
 }: ImageTextSectionProps) {
   return (
-    <section className={cn("py-20 sm:py-24", background === "tint" && "bg-secondary/40")}>
+    <section className={cn("py-20 sm:py-24", background === "tint" && "bg-slate-100 dark:bg-slate-900")}>
       <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
         <Reveal
           direction="none"
           className={cn(
-            "relative h-64 w-full overflow-hidden rounded-2xl sm:h-96",
+            "relative h-64 w-full overflow-hidden rounded-2xl border-4 border-white shadow-lg sm:h-96",
             imageSide === "right" && "lg:order-last"
           )}
         >

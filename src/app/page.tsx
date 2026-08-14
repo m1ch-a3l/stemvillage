@@ -3,8 +3,8 @@ import { WhoItsFor } from "@/components/sections/WhoItsFor";
 import { MissionSection } from "@/components/sections/MissionSection";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhatWeDo } from "@/components/sections/WhatWeDo";
-import { StemAreasGrid } from "@/components/sections/StemAreasGrid";
 import { ProgrammesGrid } from "@/components/sections/ProgrammesGrid";
+import { LocationsSection } from "@/components/sections/LocationsSection";
 import { ImageTextSection } from "@/components/sections/ImageTextSection";
 import { WhySTEMatters } from "@/components/sections/WhySTEMatters";
 import { ActivitiesGallery } from "@/components/sections/ActivitiesGallery";
@@ -20,16 +20,16 @@ export default function Home() {
       <MissionSection />
       <HowItWorks />
       <WhatWeDo />
-      <StemAreasGrid />
       <ProgrammesGrid />
+      <LocationsSection />
       <ImageTextSection
         image={heroPhotos[2]}
-        imageAlt="Robotics Academy learners building a robot"
-        eyebrow="Robotics Academy"
-        title="Built for hands-on discovery."
-        description="From a first circuit to a fully autonomous build — learners in our Robotics Academy spend more time building than listening, with mentors on hand for the moments that need a second pair of eyes."
-        ctaLabel="Explore Robotics Academy"
-        ctaHref="/programmes/robotics-academy"
+        imageAlt="Innovators building and wiring hardware"
+        eyebrow="The Innovators"
+        title="Connecting Theoretical Knowledge to Real-World Power."
+        description="Dynamic, inquisitive, and solution-driven! The Innovators are ready to move beyond basic concepts. They dig under the hood of technology to understand how things work, bridging the gap between imagination and execution."
+        ctaLabel="Explore The Innovators"
+        ctaHref="/programmes/innovators"
         imageSide="right"
       />
       <WhySTEMatters />
@@ -47,12 +47,12 @@ export default function Home() {
       />
       <Testimonials />
       <CTASection
-        title="Your STEM journey starts here."
-        description="Whether you're a learner, a parent, a school or an organisation — there's a way to get involved."
-        primaryLabel="Start Learning"
-        primaryHref="/programmes"
-        secondaryLabel="Partner With Us"
-        secondaryHref="/schools-partnerships"
+        title="Ready to Join the Village?"
+        description="Seats for our Pilot Cohort are intentionally limited to maintain small student-to-mentor ratios."
+        primaryLabel="Reserve Your Student's Spot"
+        primaryHref="/contact"
+        secondaryLabel="Call to Schedule a Visit"
+        secondaryHref="tel:+233543771181"
       />
     </>
   );

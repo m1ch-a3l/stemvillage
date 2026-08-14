@@ -83,8 +83,8 @@ export function Hero() {
         <Container className="flex items-end gap-3 overflow-x-auto pb-10 sm:gap-4 sm:overflow-visible sm:pb-16">
         {/* 1. Rotating photo card — medium */}
         <Link
-          href="/stem-areas"
-          className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl shadow-xl sm:h-56 sm:min-w-0"
+          href="/programmes"
+          className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-56 sm:min-w-0"
         >
           <HeroCarousel
             images={heroPhotos.slice(0, 2)}
@@ -94,14 +94,14 @@ export function Hero() {
             sizes="200px"
           />
           <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-indigo-dark">
-            STEM Areas
+            Learning Tribes
           </span>
         </Link>
 
         {/* 2. Photo card — medium */}
         <Link
-          href="/stem-areas/artificial-intelligence"
-          className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl shadow-xl sm:h-56 sm:min-w-0"
+          href="/programmes/architects-builders"
+          className="group relative h-44 min-w-[110px] flex-1 overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-56 sm:min-w-0"
         >
           <Image
             src={stemAreaPhotos["artificial-intelligence"]}
@@ -112,14 +112,14 @@ export function Hero() {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-brand-indigo-dark">
-            AI
+            Tech
           </span>
         </Link>
 
         {/* 3. Photo + CTA card — tallest */}
         <Link
           href="/schools-partnerships"
-          className="group relative flex h-56 min-w-[132px] flex-1 flex-col justify-between overflow-hidden rounded-3xl bg-brand-gold p-4 shadow-2xl sm:h-72 sm:min-w-0 sm:p-5"
+          className="group relative flex h-56 min-w-[132px] flex-1 flex-col justify-between overflow-hidden rounded-3xl border-4 border-white bg-brand-gold p-4 shadow-2xl sm:h-72 sm:min-w-0 sm:p-5"
         >
           <Image
             src={stemAreaPhotos["robotics-electronics"]}

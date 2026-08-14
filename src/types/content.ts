@@ -3,35 +3,20 @@
 // headless CMS later means changing those accessors, not these types or the
 // components that consume them.
 
-export interface StemArea {
+export interface LearningTribe {
   slug: string;
   name: string;
-  shortDescription: string;
-  description: string;
-  icon: StemAreaIcon;
-  skills: string[];
+  ageGroup: string;
+  motto: string;
+  vibe: string;
+  whatTheyDo: { title: string; description: string }[];
+  keyOutcome: string;
 }
 
-export type StemAreaIcon =
-  | "code"
-  | "robot"
-  | "brain"
-  | "data"
-  | "shield"
-  | "math"
-  | "engineering";
-
-export interface Programme {
+export interface Location {
   slug: string;
-  title: string;
-  tagline: string;
-  description: string;
-  audience: string;
-  format: string;
-  duration: string;
-  stemAreas: string[];
-  image: string;
-  featured?: boolean;
+  name: string;
+  highlights: string;
 }
 
 export interface Workshop {

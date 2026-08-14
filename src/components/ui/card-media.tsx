@@ -14,7 +14,7 @@ interface CardMediaProps {
 export function CardMedia({ photo, seed, alt, className, sizes, priority }: CardMediaProps) {
   if (photo) {
     return (
-      <div className={cn("relative h-full w-full", className)}>
+      <div className={cn("relative h-full w-full border-4 border-white", className)}>
         <Image
           src={photo}
           alt={alt}

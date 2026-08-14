@@ -39,7 +39,7 @@ export default function SchoolsPartnershipsPage() {
       />
       <section className="py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <div className="relative order-first h-64 w-full overflow-hidden rounded-2xl sm:h-80 lg:order-none lg:h-full lg:min-h-[400px]">
+          <div className="relative order-first h-64 w-full overflow-hidden rounded-2xl border-4 border-white shadow-lg sm:h-80 lg:order-none lg:h-full lg:min-h-[400px]">
             <Image
               src={stemAreaPhotos["coding-programming"]}
               alt="Students working on a school STEM programme"
@@ -81,7 +81,7 @@ export default function SchoolsPartnershipsPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/40 py-16 sm:py-20">
+      <section className="bg-slate-100 py-16 sm:py-20 dark:bg-slate-900">
         <Container className="mx-auto flex max-w-2xl flex-col gap-8">
           <SectionHeader
             eyebrow="Get In Touch"

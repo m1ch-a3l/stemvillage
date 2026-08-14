@@ -1,45 +1,45 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/layout/Container";
-import { ProgrammeCard } from "@/components/cards/ProgrammeCard";
+import { LearningTribeCard } from "@/components/cards/LearningTribeCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { pageMetadata } from "@/lib/seo";
 import { heroPhotos } from "@/lib/photos";
-import { getProgrammes } from "@/lib/content";
+import { getLearningTribes } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Programmes",
-  description: "Explore GoStem's structured STEM programmes — from STEM for Kids to Coding Bootcamp and Career Mentorship.",
+  title: "Learning Tribes",
+  description: "Explore STEM Village's three Learning Tribes — Explorers, Innovators, and Architects and Builders — each a custom-built pathway for a different age group.",
   path: "/programmes",
 });
 
 export default function ProgrammesPage() {
-  const programmes = getProgrammes();
+  const tribes = getLearningTribes();
 
   return (
     <>
       <PageHero
-        eyebrow="Programmes"
-        title="A programme for every stage of the STEM journey."
-        description="Structured, hands-on learning paths for kids, teens, adults, schools and communities."
+        eyebrow="Our Learning Tribes"
+        title="A custom-built pathway for every age."
+        description="Whether your child is taking their first steps in logic or prototyping real-world software, we have a custom-built pathway for them."
         image={heroPhotos[3]}
       />
       <section className="py-16 sm:py-20">
         <Container>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {programmes.map((programme) => (
-              <ProgrammeCard key={programme.slug} programme={programme} />
+            {tribes.map((tribe) => (
+              <LearningTribeCard key={tribe.slug} tribe={tribe} />
             ))}
           </div>
         </Container>
       </section>
       <CTASection
-        title="Not sure which programme fits?"
-        description="Reach out and our team will help match you or your child to the right programme."
+        title="Not sure which tribe fits?"
+        description="Reach out and our team will help match your child to the right Learning Tribe."
         primaryLabel="Contact Us"
         primaryHref="/contact"
-        secondaryLabel="View STEM Areas"
-        secondaryHref="/stem-areas"
+        secondaryLabel="View Workshops"
+        secondaryHref="/workshops"
       />
     </>
   );

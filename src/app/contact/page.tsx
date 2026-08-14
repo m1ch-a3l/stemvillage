@@ -69,7 +69,7 @@ export default function ContactPage() {
               <h3 className="text-sm font-semibold text-foreground">Location</h3>
               <p className="text-sm text-muted-foreground">{siteConfig.location}</p>
             </div>
-            <div className="relative h-40 w-full overflow-hidden rounded-xl">
+            <div className="relative h-40 w-full overflow-hidden rounded-xl border-4 border-white shadow-lg">
               <Image
                 src={mentorshipPhoto}
                 alt="A GoStem team member in conversation"

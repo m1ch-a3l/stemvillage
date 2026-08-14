@@ -1,16 +1,16 @@
 // Placeholder organisation identity — replace with real branding when available.
 export const siteConfig = {
-  name: "StemVillage",
-  legalName: "StemVillage Foundation",
+  name: "STEM Village",
+  legalName: "STEM Village Foundation",
   foundedYear: 2021,
-  tagline: "Go Further in STEM.",
+  tagline: "Where Curiosity Meets Innovation and Future Leaders Are Built.",
   description:
-    "StemVillage equips young people, learners and communities across Ghana and beyond with the knowledge, skills and opportunities to explore technology, solve problems and build the future.",
+    "At STEM Village, we turn screen time into build time and curiosity into capability. Our after-school pilot program creates a vibrant ecosystem where young minds don't just learn about the future, they design, engineer, and lead it.",
   url: "https://www.stemvillage.org",
   email: "hello@stemvillage.org",
   partnershipsEmail: "partnerships@stemvillage.org",
   programmesEmail: "programmes@stemvillage.org",
-  phone: "+233 20 000 0000",
+  phone: "+233 54 377 1181",
   location: "Accra, Ghana",
   socials: {
     facebook: "https://facebook.com/stemvillage",
@@ -28,11 +28,9 @@ export const navLinks = [
     href: "/programmes",
     children: [
       { label: "All Programmes", href: "/programmes" },
-      { label: "STEM Areas", href: "/stem-areas" },
       { label: "Workshops", href: "/workshops" },
     ],
   },
-  { label: "STEM Areas", href: "/stem-areas" },
 ] as const;
 
 export const footerLinks = {
@@ -42,7 +40,6 @@ export const footerLinks = {
     { label: "Our Team", href: "/team" },
   ],
   programmes: [
-    { label: "STEM Education", href: "/stem-areas" },
     { label: "Workshops", href: "/workshops" },
     { label: "Schools & Partnerships", href: "/schools-partnerships" },
     { label: "Mentors", href: "/mentors" },

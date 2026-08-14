@@ -33,7 +33,7 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-20">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <div className="relative order-first h-64 w-full overflow-hidden rounded-2xl sm:h-96 lg:order-none lg:h-full lg:min-h-[420px]">
+          <div className="relative order-first h-64 w-full overflow-hidden rounded-2xl border-4 border-white shadow-lg sm:h-96 lg:order-none lg:h-full lg:min-h-[420px]">
             <Image
               src={aboutMissionPhoto}
               alt="GoStem team members collaborating"
@@ -87,7 +87,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section id="mission" className="bg-secondary/40 py-16 sm:py-20">
+      <section id="mission" className="bg-slate-100 py-16 sm:py-20 dark:bg-slate-900">
         <Container className="flex flex-col gap-10">
           <SectionHeader eyebrow="Mission, Vision & Values" title="What drives our work." align="center" className="mx-auto" />
           <div className="grid gap-6 sm:grid-cols-3">
@@ -131,7 +131,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-secondary/40 py-16 sm:py-20">
+      <section className="bg-slate-100 py-16 sm:py-20 dark:bg-slate-900">
         <Container className="flex flex-col items-center gap-4 text-center">
           <span className="flex size-12 items-center justify-center rounded-full bg-brand-gold-soft text-brand-indigo">
             <Users className="size-6" aria-hidden />

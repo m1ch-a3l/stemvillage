@@ -58,27 +58,16 @@ export const heroPhotos = [
 export const aboutMissionPhoto = "/images/photos/about-mission.jpg";
 export const mentorshipPhoto = "/images/photos/mentorship.jpg";
 
-// Programme photos, keyed by programme slug — each programme gets a distinct
+// Learning Tribe photos, keyed by tribe slug — each tribe gets a distinct
 // image so the listing never shows the same photo twice.
 export const programmePhotos: Record<string, string> = {
-  "stem-for-kids": "/images/photos/gallery-activities/475386634_594315696851032_6012668746520625730_n.jpg",
-  "teen-coding": "/images/photos/stem-coding-programming.jpg",
-  "robotics-academy": "/images/photos/stem-robotics-electronics.jpg",
-  "ai-machine-learning": "/images/photos/stem-artificial-intelligence.jpg",
-  "coding-bootcamp": "/images/photos/event-bootcamp.jpg",
-  "stem-clubs": "/images/photos/event-school-visit.jpg",
-  "school-stem-programme": "/images/photos/gallery-activities/469717204_555974400685162_6541074027306864709_n.jpg",
-  "women-in-stem": "/images/photos/gallery-activities/469477605_555974744018461_6866936589855080471_n.jpg",
-  "community-stem-outreach": "/images/photos/event-stem-fair.jpg",
-  "career-mentorship": "/images/photos/mentorship.jpg",
+  explorers: "/images/photos/stem-mathematics-science.jpg",
+  innovators: "/images/photos/stem-robotics-electronics.jpg",
+  "architects-builders": "/images/photos/gallery-activities/475528451_594315403517728_2407485001173510194_n.jpg",
 };
 
 export function getProgrammePhoto(slug: string): string | undefined {
   return programmePhotos[slug];
-}
-
-export function getStemAreaPhoto(slug: string): string | undefined {
-  return stemAreaPhotos[slug];
 }
 
 export function getWorkshopPhoto(slug: string): string | undefined {
