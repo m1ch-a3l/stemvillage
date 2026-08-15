@@ -17,21 +17,17 @@ export function TeamMemberCard({ name, role, bio, slug, photo, linkedin }: TeamM
         <CardMedia photo={photo} seed={slug} alt={name} sizes="(min-width: 1024px) 25vw, 50vw" />
       </div>
       <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-2">
-          <h3 className="font-heading text-base font-semibold text-foreground">{name}</h3>
-          {linkedin ? (
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${name} on LinkedIn`}
-              className="text-muted-foreground transition-colors hover:text-brand-indigo dark:hover:text-primary"
-            >
-              <LinkedinIcon className="size-4" aria-hidden />
-            </a>
-          ) : null}
-        </div>
+        <h3 className="font-heading text-base font-semibold text-foreground">{name}</h3>
         <p className="text-sm font-medium text-brand-indigo dark:text-primary">{role}</p>
+        <a
+          href={linkedin || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} on LinkedIn`}
+          className="mt-1 flex size-7 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-brand-indigo hover:text-brand-indigo dark:hover:border-primary dark:hover:text-primary"
+        >
+          <LinkedinIcon className="size-3.5" aria-hidden />
+        </a>
         {bio ? <p className="text-sm text-muted-foreground">{bio}</p> : null}
       </div>
     </div>

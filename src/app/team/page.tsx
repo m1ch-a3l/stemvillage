@@ -24,17 +24,18 @@ export default function TeamPage() {
           description="Our philosophy is simple: bring together people who care about STEM education, and give them the support to do their best work."
           align="center"
         />
-        <div className="grid w-full gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex w-full flex-wrap justify-center gap-x-10 gap-y-12">
           {team.map((member) => (
-            <TeamMemberCard
-              key={member.slug}
-              slug={member.slug}
-              name={member.name}
-              role={member.role}
-              bio={member.bio}
-              linkedin={member.linkedin}
-              photo={getTeamPhoto(member.slug)}
-            />
+            <div key={member.slug} className="w-full max-w-64 sm:w-64">
+              <TeamMemberCard
+                slug={member.slug}
+                name={member.name}
+                role={member.role}
+                bio={member.bio}
+                linkedin={member.linkedin}
+                photo={getTeamPhoto(member.slug)}
+              />
+            </div>
           ))}
         </div>
       </Container>

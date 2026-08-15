@@ -49,8 +49,8 @@ export function Footer() {
             <Image
               src="/images/logo_white.png"
               alt="Thanksgiving Place Chapel and Ministries"
-              width={535}
-              height={190}
+              width={537}
+              height={218}
               className="h-14 w-auto object-contain"
               priority
             />
