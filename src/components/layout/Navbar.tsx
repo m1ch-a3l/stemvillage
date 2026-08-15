@@ -53,9 +53,9 @@ export function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Thanksgiving Place Chapel and Ministries"
-            width={160}
-            height={48}
-            className="h-10 w-auto object-contain"
+            width={535}
+            height={190}
+            className="h-12 w-auto object-contain"
             priority
           />
         </Link>

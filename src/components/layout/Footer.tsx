@@ -46,14 +46,14 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
- <Image
-            src="/images/logo_white.png"
-            alt="Thanksgiving Place Chapel and Ministries"
-            width={160}
-            height={48}
-            className="h-10 w-auto object-contain"
-            priority
-          />
+            <Image
+              src="/images/logo_white.png"
+              alt="Thanksgiving Place Chapel and Ministries"
+              width={535}
+              height={190}
+              className="h-14 w-auto object-contain"
+              priority
+            />
             </Link>
             <p className="max-w-sm text-sm text-white/65">{siteConfig.description}</p>
             <ul className="flex flex-col gap-2 text-sm text-white/65">
