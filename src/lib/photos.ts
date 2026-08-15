@@ -30,16 +30,9 @@ export const workshopPhotos: Record<string, string> = {
   "corporate-innovation-sprint": "/images/photos/workshop-corporate.jpg",
 };
 
-// Stock portrait photos for placeholder team/mentor profiles — replace with
-// real, consented staff and mentor photos before launch.
-export const teamPhotos: Record<string, string> = {
-  "founder-executive-director": "/images/photos/team-1.jpg",
-  "programmes-lead": "/images/photos/team-2.jpg",
-  "robotics-instructor": "/images/photos/team-3.jpg",
-  "partnerships-manager": "/images/photos/team-4.jpg",
-  "operations-manager": "/images/photos/team-5.jpg",
-  "community-outreach-coordinator": "/images/photos/team-6.jpg",
-};
+// Real staff photos, keyed by team member slug — add an entry once a real,
+// consented photo is available. Falls back to placeholder art until then.
+export const teamPhotos: Record<string, string> = {};
 
 export const mentorPhotos: Record<string, string> = {
   "software-engineering-mentor": "/images/photos/mentor-1.jpg",

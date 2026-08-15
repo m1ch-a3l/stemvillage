@@ -7,7 +7,7 @@ export const siteConfig = {
   description:
     "At STEM Village, we turn screen time into build time and curiosity into capability. Our after-school pilot program creates a vibrant ecosystem where young minds don't just learn about the future, they design, engineer, and lead it.",
   url: "https://www.stemvillage.org",
-  email: "support@t3sinnovation.com",
+  email: "hello@stemvillage.com",
   phone: "+233 54 377 1181",
   phoneSecondary: "+233 55 252 8315",
   location: "C-Six Ofankor Hills Estate",

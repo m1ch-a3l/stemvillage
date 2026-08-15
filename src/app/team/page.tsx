@@ -33,6 +33,7 @@ export default function TeamPage() {
                 name={member.name}
                 role={member.role}
                 bio={member.bio}
+                linkedin={member.linkedin}
                 photo={getTeamPhoto(member.slug)}
               />
             ))}
