@@ -47,7 +47,7 @@ export function Footer() {
           <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-heading text-lg font-bold text-white">
             <Image
-              src="/images/logo.png"
+              src="/images/logo_white.png"
               alt="Thanksgiving Place Chapel and Ministries"
               width={535}
               height={190}
