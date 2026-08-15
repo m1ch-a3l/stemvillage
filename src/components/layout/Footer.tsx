@@ -68,6 +68,10 @@ export function Footer() {
                 <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-white">
                   {siteConfig.phone}
                 </a>
+                <span aria-hidden>/</span>
+                <a href={`tel:${siteConfig.phoneSecondary.replace(/\s/g, "")}`} className="hover:text-white">
+                  {siteConfig.phoneSecondary}
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="size-4 shrink-0" aria-hidden />

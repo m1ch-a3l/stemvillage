@@ -30,37 +30,24 @@ export default function ContactPage() {
               <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
                 <Mail className="size-5" aria-hidden />
               </span>
-              <h3 className="text-sm font-semibold text-foreground">General Enquiries</h3>
+              <h3 className="text-sm font-semibold text-foreground">Email</h3>
               <a href={`mailto:${siteConfig.email}`} className="text-sm text-muted-foreground hover:text-foreground">
                 {siteConfig.email}
               </a>
             </div>
             <div className="flex flex-col gap-3 rounded-xl border border-border p-6">
               <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-                <Mail className="size-5" aria-hidden />
-              </span>
-              <h3 className="text-sm font-semibold text-foreground">Partnership Enquiries</h3>
-              <a href={`mailto:${siteConfig.partnershipsEmail}`} className="text-sm text-muted-foreground hover:text-foreground">
-                {siteConfig.partnershipsEmail}
-              </a>
-            </div>
-            <div className="flex flex-col gap-3 rounded-xl border border-border p-6">
-              <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
-                <Mail className="size-5" aria-hidden />
-              </span>
-              <h3 className="text-sm font-semibold text-foreground">Programme Enquiries</h3>
-              <a href={`mailto:${siteConfig.programmesEmail}`} className="text-sm text-muted-foreground hover:text-foreground">
-                {siteConfig.programmesEmail}
-              </a>
-            </div>
-            <div className="flex flex-col gap-3 rounded-xl border border-border p-6">
-              <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
                 <Phone className="size-5" aria-hidden />
               </span>
-              <h3 className="text-sm font-semibold text-foreground">Phone</h3>
-              <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-sm text-muted-foreground hover:text-foreground">
-                {siteConfig.phone}
-              </a>
+              <h3 className="text-sm font-semibold text-foreground">Call to Enrol or for Further Information</h3>
+              <div className="flex flex-col gap-1">
+                <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-sm text-muted-foreground hover:text-foreground">
+                  {siteConfig.phone}
+                </a>
+                <a href={`tel:${siteConfig.phoneSecondary.replace(/\s/g, "")}`} className="text-sm text-muted-foreground hover:text-foreground">
+                  {siteConfig.phoneSecondary}
+                </a>
+              </div>
             </div>
             <div className="flex flex-col gap-3 rounded-xl border border-border p-6">
               <span className="flex size-10 items-center justify-center rounded-lg bg-brand-indigo/10 text-brand-indigo dark:bg-primary/10 dark:text-primary">
