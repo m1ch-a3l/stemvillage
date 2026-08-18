@@ -33,7 +33,7 @@ export const workshopPhotos: Record<string, string> = {
 // Real staff photos, keyed by team member slug — add an entry once a real,
 // consented photo is available. Falls back to placeholder art until then.
 export const teamPhotos: Record<string, string> = {
-  "rev-e-a-builderman": "/images/team/Enoch.jpg",
+  "rev-e-a-builderman": "/images/team/Enoch.webp",
   "michael-yeboah-adu": "/images/team/Michael.jpg",
 };
 

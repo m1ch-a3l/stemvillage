@@ -30,6 +30,7 @@ export const navLinks = [
       { label: "Workshops", href: "/workshops" },
     ],
   },
+  { label: "Team", href: "/team" },
 ] as const;
 
 export const footerLinks = {
