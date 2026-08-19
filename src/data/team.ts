@@ -5,7 +5,7 @@ export const team: TeamMember[] = [
     slug: "rev-e-a-builderman",
     name: "Rev. E. A. Builderman",
     role: "Founder",
-    linkedin: "#"
+    linkedin: "https://www.linkedin.com/in/acheampong-e-s-builderman-25513323/"
   },
   {
     slug: "michael-yeboah-adu",
